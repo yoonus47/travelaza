@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelaza/dashbord_view.dart';
 import 'pages.dart';
 
 class Home extends StatefulWidget {
@@ -10,7 +11,7 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     DiscoverPage(),
-    DashbordPage(),
+    DashbordView(),
     ArticlesPage(),
   ];
 

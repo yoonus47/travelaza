@@ -9,15 +9,6 @@ class DiscoverPage extends StatelessWidget {
   }
 }
 
-class DashbordPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Color.fromARGB(255, 79, 5, 117),
-    );
-  }
-}
-
 class ArticlesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
