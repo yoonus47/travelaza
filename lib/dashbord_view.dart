@@ -12,19 +12,26 @@ class DashbordView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: new ListView.builder(
+    return Scaffold(
+      body: new ListView.builder(
           itemCount: tripsList.length,
           itemBuilder: (BuildContext context, int index) =>
               buildTripCard(context, index)),
+      floatingActionButton: buildNavigateButton(),
     );
   }
+
+  Widget buildNavigateButton() => FloatingActionButton(
+      child: Icon(Icons.add),
+      onPressed: () {},
+      backgroundColor: Color.fromARGB(255, 111, 10, 10));
 
   Widget buildTripCard(BuildContext context, int index) {
     final trip = tripsList[index];
 
     return Container(
       child: Card(
+        color: Color.fromARGB(255, 207, 204, 15),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
