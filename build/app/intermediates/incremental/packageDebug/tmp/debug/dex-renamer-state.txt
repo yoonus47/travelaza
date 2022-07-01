@@ -1,0 +1,4 @@
+#Fri Jul 01 14:36:49 IST 2022
+base.0=/Users/yoonus/Desktop/FlutterProjs/travelaza/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travelaza/dashbord_view.dart';
+import 'package:travelaza/views/dashbord_view.dart';
 import 'pages.dart';
+import 'views/new_trips/location_view.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -27,15 +28,35 @@ class _HomeState extends State<Home> {
         currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
-              icon: new Icon(Icons.map_rounded), label: 'Discover'),
+              icon: new Icon(Icons.map_rounded,
+                  size: 25, color: Color.fromARGB(255, 110, 32, 9)),
+              label: 'Discover'),
           BottomNavigationBarItem(
-              icon: new Icon(Icons.dashboard_rounded), label: 'Dashbord'),
+              icon: new Icon(Icons.dashboard_rounded,
+                  size: 40, color: Color.fromARGB(255, 110, 32, 9)),
+              label: 'Dashbord'),
           BottomNavigationBarItem(
-              icon: new Icon(Icons.library_books_rounded), label: 'Articles'),
+              icon: new Icon(
+                Icons.library_books_rounded,
+                size: 25,
+                color: Color.fromARGB(255, 110, 32, 9),
+              ),
+              label: 'Articles'),
         ],
       ),
+      floatingActionButton: buildNavigateButton(),
     );
   }
+
+  Widget buildNavigateButton() => FloatingActionButton(
+      child: Icon(Icons.add),
+      backgroundColor: Color.fromARGB(255, 111, 10, 10),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => NewTripLocationView()),
+        );
+      });
 
   void onTabTapped(int index) {
     setState(() {
