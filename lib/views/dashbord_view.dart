@@ -4,7 +4,7 @@ import '../models/Trip.dart';
 import 'new_trips/location_view.dart';
 
 class DashbordView extends StatelessWidget {
-  final List<Trip> tripsList = [
+  List<Trip> tripsList = [
     Trip("Hyderabad", DateTime.now(), DateTime.now(), 30000.0, "Train"),
     Trip("Goa", DateTime.now(), DateTime.now(), 20000.0, "Train"),
     Trip("Chikmangluru", DateTime.now(), DateTime.now(), 15000.0, "Car"),
@@ -13,6 +13,7 @@ class DashbordView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    final newTrip = Trip(" ", DateTime.now(), DateTime.now(), 00.00, " ");
     return Scaffold(
       body: new ListView.builder(
           itemCount: tripsList.length,
@@ -24,7 +25,10 @@ class DashbordView extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => NewTripLocationView()),
+              MaterialPageRoute(
+                  builder: (context) => NewTripLocationView(
+                        trip: newTrip,
+                      )),
             );
           }),
     );
