@@ -44,19 +44,8 @@ class _HomeState extends State<Home> {
               label: 'Articles'),
         ],
       ),
-      floatingActionButton: buildNavigateButton(),
     );
   }
-
-  Widget buildNavigateButton() => FloatingActionButton(
-      child: Icon(Icons.add),
-      backgroundColor: Color.fromARGB(255, 111, 10, 10),
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => NewTripLocationView()),
-        );
-      });
 
   void onTabTapped(int index) {
     setState(() {

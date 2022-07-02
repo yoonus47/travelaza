@@ -18,6 +18,15 @@ class DashbordView extends StatelessWidget {
           itemCount: tripsList.length,
           itemBuilder: (BuildContext context, int index) =>
               buildTripCard(context, index)),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          backgroundColor: Color.fromARGB(255, 111, 10, 10),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NewTripLocationView()),
+            );
+          }),
     );
   }
 
