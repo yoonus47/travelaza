@@ -34,14 +34,16 @@ class DashbordView extends StatelessWidget {
     final trip = tripsList[index];
 
     return Container(
+      color: Color.fromARGB(255, 103, 177, 234),
+      padding: EdgeInsets.fromLTRB(4, 6, 4, 6),
       child: Card(
-        color: Color.fromARGB(255, 207, 204, 15),
+        color: Color.fromARGB(235, 228, 144, 85),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 40.0, 0, 20.0),
+                padding: const EdgeInsets.fromLTRB(0, 50.0, 0, 25.0),
                 child: Row(
                   children: [
                     Text(
