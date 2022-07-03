@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:travelaza/models/Trip.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class NewTripBudgetView extends StatelessWidget {
+  final db = FirebaseFirestore.instance;
+
   final Trip trip;
   NewTripBudgetView({Key? key, @required required this.trip}) : super(key: key);
 
@@ -21,8 +24,9 @@ class NewTripBudgetView extends StatelessWidget {
               Text("End Date ${trip.endDate}"),
               RaisedButton(
                 child: Text('Finish'),
-                onPressed: () {
+                onPressed: () async {
                   //save data to FB
+                  await db.collection("trips").add(trip.toJson());
 
                   Navigator.of(context).popUntil((route) => route.isFirst);
                 },
