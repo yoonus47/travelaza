@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travelaza/views/dashbord_view.dart';
-import 'pages.dart';
+import 'package:travelaza/views/discover_view.dart';
+import 'package:travelaza/views/articles_view.dart';
 import 'views/new_trips/location_view.dart';
 
 class Home extends StatefulWidget {
@@ -11,9 +12,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 1;
   final List<Widget> _children = [
-    DiscoverPage(),
+    DiscoverView(),
     DashbordView(),
-    ArticlesPage(),
+    ArticlesView(),
   ];
 
   @override
@@ -53,3 +54,11 @@ class _HomeState extends State<Home> {
     });
   }
 }
+
+
+// Colors
+// green       Color.fromARGB(255,  76, 191, 166),
+// lightpink   Color.fromARGB(255, 246, 235, 244),
+// purple      Color.fromARGB(255,  72, 38, 115),
+// rose        Color.fromARGB(255, 237, 11, 112),
+// darkteal    Color.fromARGB(255, 2, 59, 89),
