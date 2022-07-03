@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../models/Trip.dart';
 import 'new_trips/location_view.dart';
+import 'package:scroll_app_bar/scroll_app_bar.dart';
 
 class DashbordView extends StatelessWidget {
   List<Trip> tripsList = [
@@ -11,14 +12,29 @@ class DashbordView extends StatelessWidget {
     Trip("Delhi", DateTime.now(), DateTime.now(), 25000.0, "Flight"),
     Trip("Chennai", DateTime.now(), DateTime.now(), 20000.0, "Flight"),
   ];
+  final controller = ScrollController();
   @override
   Widget build(BuildContext context) {
     final newTrip = Trip(" ", DateTime.now(), DateTime.now(), 00.00, " ");
+
     return Scaffold(
-      body: new ListView.builder(
-          itemCount: tripsList.length,
-          itemBuilder: (BuildContext context, int index) =>
-              buildTripCard(context, index)),
+      appBar: ScrollAppBar(
+        controller: controller,
+        backgroundColor: Color.fromARGB(255, 72, 38, 115),
+        elevation: 0.0,
+        title: Text(
+          'Plans',
+          style: TextStyle(color: Color.fromARGB(255, 246, 235, 244)),
+        ),
+      ),
+      body: Snap(
+        controller: controller.appBar,
+        child: new ListView.builder(
+            controller: controller,
+            itemCount: tripsList.length,
+            itemBuilder: (BuildContext context, int index) =>
+                buildTripCard(context, index)),
+      ),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           backgroundColor: Color.fromARGB(255, 111, 10, 10),

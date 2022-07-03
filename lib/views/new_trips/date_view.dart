@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:travelaza/models/Trip.dart';
+import 'package:intl/intl.dart';
 import 'budget_view.dart';
 
 class NewTripDateView extends StatelessWidget {
+  DateTime _startDate = DateTime.now();
+  DateTime _endDate = DateTime.now().add(Duration(days: 7));
+
   final Trip trip;
   NewTripDateView({Key? key, @required required this.trip}) : super(key: key);
 
@@ -19,16 +23,18 @@ class NewTripDateView extends StatelessWidget {
               Text("Location ${trip.title}"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text('Choose Starting Date'),
-                  Text('Choose End Date'),
+                children: <Widget>[
+                  Text(
+                      "Start Date: ${DateFormat('dd/MM/yyyy').format(_startDate).toString()}"),
+                  Text(
+                      "End Date: ${DateFormat('dd/MM/yyyy').format(_endDate).toString()}"),
                 ],
               ),
               RaisedButton(
                 child: Text('Continue'),
                 onPressed: () {
-                  trip.startDate = DateTime.now();
-                  trip.startDate = DateTime.now();
+                  trip.startDate = _startDate;
+                  trip.endDate = _endDate;
                   Navigator.push(
                     context,
                     MaterialPageRoute(

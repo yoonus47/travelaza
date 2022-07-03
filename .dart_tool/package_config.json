@@ -62,6 +62,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "date_range_picker",
+      "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/date_range_picker-1.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0",
       "packageUri": "lib/",
@@ -158,6 +164,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "scroll_app_bar",
+      "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/scroll_app_bar-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "scroll_bars_common",
+      "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/scroll_bars_common-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/yoonus/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -218,7 +236,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-07-03T07:45:32.356116Z",
+  "generated": "2022-07-03T14:20:48.965948Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }

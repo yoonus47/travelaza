@@ -42,6 +42,10 @@ cupertino_icons
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/lib/
+date_range_picker
+2.0
+file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/date_range_picker-1.0.7/
+file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/date_range_picker-1.0.7/lib/
 fake_async
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/
@@ -94,6 +98,14 @@ plugin_platform_interface
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.2/
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.2/lib/
+scroll_app_bar
+2.12
+file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/scroll_app_bar-2.0.0/
+file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/scroll_app_bar-2.0.0/lib/
+scroll_bars_common
+2.12
+file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/scroll_bars_common-3.0.0/
+file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/scroll_bars_common-3.0.0/lib/
 source_span
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1/
