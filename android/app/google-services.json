@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "322830744682",
+    "project_id": "travelaza-3951f",
+    "storage_bucket": "travelaza-3951f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322830744682:android:743c83f9199e1999dcde13",
+        "android_client_info": {
+          "package_name": "com.example.travelaza"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322830744682-2dmgbq07r2dr0qf9eofcgat09pqktgrs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALCwguK4Wpc__Aw8GLeGdoWmTRPbFXyvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322830744682-2dmgbq07r2dr0qf9eofcgat09pqktgrs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

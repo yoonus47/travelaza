@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:travelaza/views/dashbord_view.dart';
 import 'package:travelaza/views/discover_view.dart';
 import 'package:travelaza/views/articles_view.dart';
-import 'views/new_trips/location_view.dart';
 
 class Home extends StatefulWidget {
   @override
