@@ -24,7 +24,8 @@ class DashbordView extends StatelessWidget {
         elevation: 0.0,
         title: Text(
           'Plans',
-          style: TextStyle(color: Color.fromARGB(255, 246, 235, 244)),
+          style: TextStyle(
+              color: Color.fromARGB(255, 246, 235, 244), fontSize: 25),
         ),
       ),
       body: Snap(
