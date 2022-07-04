@@ -15,7 +15,7 @@ class DashbordView extends StatelessWidget {
   final controller = ScrollController();
   @override
   Widget build(BuildContext context) {
-    final newTrip = Trip(" ", DateTime.now(), DateTime.now(), 00.00, " ");
+    final newTrip = Trip(" ", DateTime.now(), DateTime.now(), 100.00, " ");
 
     return Scaffold(
       appBar: ScrollAppBar(
