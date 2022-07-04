@@ -36,7 +36,7 @@ dependencies:
   intl: ^0.17.0
   scroll_app_bar: ^2.0.0
   flutter_launcher_icons: ^0.9.3
-  date_range_picker: ^1.0.7
+  auto_size_text: ^3.0.0
 
   cloud_firestore: ^3.2.1
   firebase_core: ^1.19.1

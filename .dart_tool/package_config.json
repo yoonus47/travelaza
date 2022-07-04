@@ -20,6 +20,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "auto_size_text",
+      "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
       "packageUri": "lib/",
@@ -78,12 +84,6 @@
       "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
-    },
-    {
-      "name": "date_range_picker",
-      "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/date_range_picker-1.0.7",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
     },
     {
       "name": "fake_async",
@@ -272,7 +272,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-07-04T15:50:07.784142Z",
+  "generated": "2022-07-04T18:18:23.047473Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }

@@ -61,3 +61,5 @@ class _HomeState extends State<Home> {
 // purple      Color.fromARGB(255,  72, 38, 115),
 // rose        Color.fromARGB(255, 237, 11, 112),
 // darkteal    Color.fromARGB(255, 2, 59, 89),
+// primary blue   Color(0xFF1A395A),
+// secondary gold Color(0xFFF9DF90),

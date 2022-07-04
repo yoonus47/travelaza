@@ -14,6 +14,10 @@ async
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/lib/
+auto_size_text
+2.12
+file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-3.0.0/
+file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-3.0.0/lib/
 boolean_selector
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/
@@ -54,10 +58,6 @@ cupertino_icons
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/lib/
-date_range_picker
-2.0
-file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/date_range_picker-1.0.7/
-file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/date_range_picker-1.0.7/lib/
 fake_async
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/
