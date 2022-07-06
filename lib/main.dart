@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'home_widget.dart';
+import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'home_widget.dart';
+import 'package:travelaza/services/auth_service.dart';
 import 'package:travelaza/views/first_view.dart';
+import 'package:travelaza/widgets/wrapper.dart';
+
+import 'package:travelaza/views/signup_view.dart';
+import 'package:travelaza/views/login_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,14 +19,23 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Travelaza",
-      theme: ThemeData(primarySwatch: Colors.pink),
-      home: FirstView(),
-      routes: <String, WidgetBuilder>{
-        '/signUp': (BuildContext context) => Home(),
-        '/home': (BuildContext context) => Home(),
-      },
+    return MultiProvider(
+      providers: [
+        Provider<AuthService>(
+          create: (_) => AuthService(),
+        ),
+      ],
+      child: MaterialApp(
+        title: "Travelaza",
+        theme: ThemeData(primarySwatch: Colors.pink),
+        initialRoute: '/',
+        routes: <String, WidgetBuilder>{
+          '/': (context) => Wrapper(),
+          '/signUp': (BuildContext context) => SignUpScreen(),
+          '/login': (BuildContext context) => LoginScreen(),
+          '/home': (BuildContext context) => Home()
+        },
+      ),
     );
   }
 }
