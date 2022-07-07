@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:travelaza/views/indev.dart';
 
 import 'home_widget.dart';
 import 'package:travelaza/services/auth_service.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
           '/': (context) => Wrapper(),
           '/signUp': (BuildContext context) => SignUpScreen(),
           '/login': (BuildContext context) => LoginScreen(),
-          '/home': (BuildContext context) => Home()
+          '/home': (BuildContext context) => Home(),
+          '/indev': (BuildContext context) => InDev()
         },
       ),
     );
