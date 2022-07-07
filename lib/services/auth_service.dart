@@ -15,6 +15,10 @@ class AuthService {
     return _firebaseAuth.authStateChanges().map(_userFromFirebase);
   }
 
+  String getCurrentUID() {
+    return _firebaseAuth.currentUser!.uid;
+  }
+
   Future<User?> signInWithEmailAndPassword(
     String email,
     String password,

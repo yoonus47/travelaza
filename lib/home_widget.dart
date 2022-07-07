@@ -25,6 +25,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Travelaza"),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             icon: Icon(Icons.undo),
@@ -40,6 +41,7 @@ class _HomeState extends State<Home> {
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color.fromARGB(255, 246, 235, 244),
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [

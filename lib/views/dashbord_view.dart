@@ -20,6 +20,7 @@ class DashbordView extends StatelessWidget {
     return Scaffold(
       appBar: ScrollAppBar(
         controller: controller,
+        automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 72, 38, 115),
         elevation: 0.0,
         title: Text(
@@ -56,7 +57,7 @@ class DashbordView extends StatelessWidget {
 
     return Container(
       color: Color.fromARGB(255, 72, 38, 115),
-      padding: EdgeInsets.fromLTRB(4, 6, 4, 6),
+      padding: EdgeInsets.fromLTRB(6, 6, 6, 6),
       child: Card(
         color: Color.fromARGB(255, 246, 235, 244),
         child: Padding(
@@ -72,6 +73,7 @@ class DashbordView extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25.0,
+                        color: Color.fromARGB(255, 2, 59, 89),
                       ),
                     ),
                     Spacer()
@@ -83,7 +85,11 @@ class DashbordView extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                        "${DateFormat('MMMMd').format(trip.startDate).toString()} - ${DateFormat('MMMMd').format(trip.endDate).toString()}"),
+                      "${DateFormat('MMMMd').format(trip.startDate).toString()} - ${DateFormat('MMMMd').format(trip.endDate).toString()}",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 2, 59, 89),
+                      ),
+                    ),
                     Spacer(),
                   ],
                 ),
@@ -94,10 +100,18 @@ class DashbordView extends StatelessWidget {
                   children: [
                     Text(
                       "INR ${trip.budget.toStringAsFixed(2)}",
-                      style: TextStyle(fontSize: 22.0),
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        color: Color.fromARGB(255, 2, 59, 89),
+                      ),
                     ),
                     Spacer(),
-                    Text(trip.travelType),
+                    Text(
+                      trip.travelType,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 2, 59, 89),
+                      ),
+                    ),
                   ],
                 ),
               )

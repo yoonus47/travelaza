@@ -16,6 +16,11 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Create An Account'),
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: () => Navigator.of(context).pop(),
+          icon: new Icon(Icons.arrow_back),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

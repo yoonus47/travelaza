@@ -16,7 +16,12 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Sign In'),
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: () => Navigator.of(context).pop(),
+          icon: new Icon(Icons.arrow_back),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
