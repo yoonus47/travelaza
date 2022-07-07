@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:travelaza/models/Trip.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:provider/provider.dart';
+
+import 'package:travelaza/widgets/wrapper.dart';
+import 'package:travelaza/services/auth_service.dart';
 
 class NewTripBudgetView extends StatelessWidget {
   final db = FirebaseFirestore.instance;
@@ -26,8 +30,12 @@ class NewTripBudgetView extends StatelessWidget {
                 child: Text('Finish'),
                 onPressed: () async {
                   //save data to FB
-                  await db.collection("trips").add(trip.toJson());
-
+                  final uid = await AuthService().getCurrentUID();
+                  await db
+                      .collection("userData")
+                      .doc(uid)
+                      .collection("trips")
+                      .add(trip.toJson());
                   Navigator.of(context).popUntil((route) => route.isFirst);
                 },
               ),

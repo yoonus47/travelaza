@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../models/Trip.dart';
-import 'new_trips/location_view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 
+import 'new_trips/location_view.dart';
+import 'package:travelaza/models/Trip.dart';
+import 'package:travelaza/services/auth_service.dart';
+
 class DashbordView extends StatelessWidget {
-  List<Trip> tripsList = [
-    Trip("Hyderabad", DateTime.now(), DateTime.now(), 30000.0, "Train"),
-    Trip("Goa", DateTime.now(), DateTime.now(), 20000.0, "Train"),
-    Trip("Chikmangluru", DateTime.now(), DateTime.now(), 15000.0, "Car"),
-    Trip("Delhi", DateTime.now(), DateTime.now(), 25000.0, "Flight"),
-    Trip("Chennai", DateTime.now(), DateTime.now(), 20000.0, "Flight"),
-  ];
   final controller = ScrollController();
   @override
   Widget build(BuildContext context) {
     final newTrip = Trip(" ", DateTime.now(), DateTime.now(), 100.00, " ");
 
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 72, 38, 115),
       appBar: ScrollAppBar(
         controller: controller,
         automaticallyImplyLeading: false,
@@ -31,11 +28,16 @@ class DashbordView extends StatelessWidget {
       ),
       body: Snap(
         controller: controller.appBar,
-        child: new ListView.builder(
-            controller: controller,
-            itemCount: tripsList.length,
-            itemBuilder: (BuildContext context, int index) =>
-                buildTripCard(context, index)),
+        child: StreamBuilder<QuerySnapshot>(
+            stream: getUsersTripsStreamSnapshots(context),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) return const Text("Loading...");
+              return new ListView.builder(
+                  controller: controller,
+                  itemCount: snapshot.data!.docs.length,
+                  itemBuilder: (BuildContext context, int index) =>
+                      buildTripCard(context, snapshot.data!.docs[index]));
+            }),
       ),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
@@ -52,11 +54,18 @@ class DashbordView extends StatelessWidget {
     );
   }
 
-  Widget buildTripCard(BuildContext context, int index) {
-    final trip = tripsList[index];
+  Stream<QuerySnapshot> getUsersTripsStreamSnapshots(
+      BuildContext context) async* {
+    final uid = await AuthService().getCurrentUID();
+    yield* FirebaseFirestore.instance
+        .collection('userData')
+        .doc(uid)
+        .collection('trips')
+        .snapshots();
+  }
 
+  Widget buildTripCard(BuildContext context, DocumentSnapshot trip) {
     return Container(
-      color: Color.fromARGB(255, 72, 38, 115),
       padding: EdgeInsets.fromLTRB(6, 6, 6, 6),
       child: Card(
         color: Color.fromARGB(255, 246, 235, 244),
@@ -69,7 +78,7 @@ class DashbordView extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      trip.title,
+                      trip['title'],
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25.0,
@@ -85,7 +94,7 @@ class DashbordView extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "${DateFormat('MMMMd').format(trip.startDate).toString()} - ${DateFormat('MMMMd').format(trip.endDate).toString()}",
+                      "${DateFormat('MMMMd').format(trip['startDate'].toDate()).toString()} - ${DateFormat('MMMMd').format(trip['endDate'].toDate()).toString()}",
                       style: TextStyle(
                         color: Color.fromARGB(255, 2, 59, 89),
                       ),
@@ -99,7 +108,7 @@ class DashbordView extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "INR ${trip.budget.toStringAsFixed(2)}",
+                      "INR ${trip['budget'].toStringAsFixed(2)}",
                       style: TextStyle(
                         fontSize: 22.0,
                         color: Color.fromARGB(255, 2, 59, 89),
@@ -107,7 +116,7 @@ class DashbordView extends StatelessWidget {
                     ),
                     Spacer(),
                     Text(
-                      trip.travelType,
+                      trip['travelType'],
                       style: TextStyle(
                         color: Color.fromARGB(255, 2, 59, 89),
                       ),
