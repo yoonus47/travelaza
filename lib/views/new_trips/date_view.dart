@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/models/Trip.dart';
 import 'package:intl/intl.dart';
 import 'budget_view.dart';
@@ -46,8 +47,10 @@ class _NewTripDateViewState extends State<NewTripDateView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              buildSelectedDetails(context, widget.trip),
+              Spacer(),
               Text("Location ${widget.trip.title}"),
-              RaisedButton(
+              ElevatedButton(
                 child: Text("Select Dates"),
                 onPressed: _show,
               ),
@@ -60,7 +63,7 @@ class _NewTripDateViewState extends State<NewTripDateView> {
                       "End Date: ${DateFormat('dd/MM/yyyy').format(_endDate).toString()}"),
                 ],
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: Text('Continue'),
                 onPressed: () {
                   widget.trip.startDate = _startDate;
@@ -73,8 +76,79 @@ class _NewTripDateViewState extends State<NewTripDateView> {
                   );
                 },
               ),
+              Spacer(),
             ],
           ),
         ));
+  }
+
+  Widget buildSelectedDetails(BuildContext context, Trip trip) {
+    return Hero(
+      tag: "SelectedTrip-${trip.title}",
+      transitionOnUserGestures: true,
+      child: Container(
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 8.0,
+            right: 8.0,
+          ),
+          child: SingleChildScrollView(
+            child: Card(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 16.0, left: 16.0, bottom: 16.0),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Flexible(
+                                child: AutoSizeText(trip.title,
+                                    maxLines: 3,
+                                    style: TextStyle(fontSize: 25.0)),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text("Average Budget -- Not set up yet®"),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text("Trip Dates"),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text("Trip Budget"),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text("Trip Type"),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Placeholder(
+                        fallbackHeight: 100,
+                        fallbackWidth: 100,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

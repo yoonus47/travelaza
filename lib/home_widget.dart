@@ -3,6 +3,9 @@ import 'package:travelaza/views/dashbord_view.dart';
 import 'package:travelaza/views/discover_view.dart';
 import 'package:travelaza/views/articles_view.dart';
 
+import 'package:travelaza/services/auth_service.dart';
+import 'package:provider/provider.dart';
+
 class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
@@ -18,12 +21,27 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthService>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Travelaza"),
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.undo),
+            onPressed: () async {
+              try {
+                await authService.signOut();
+              } catch (e) {
+                print(e);
+              }
+            },
+          )
+        ],
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color.fromARGB(255, 246, 235, 244),
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [

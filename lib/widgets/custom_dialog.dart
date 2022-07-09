@@ -85,8 +85,7 @@ class CustomDialog extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.of(context).pop();
-                    Navigator.of(context)
-                        .pushReplacementNamed(primaryButtonRoute);
+                    Navigator.of(context).pushNamed(primaryButtonRoute);
                   },
                 ),
                 SizedBox(height: 10.0),
@@ -113,7 +112,7 @@ class CustomDialog extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.of(context).pop();
-          Navigator.of(context).pushReplacementNamed(secondaryButtonRoute);
+          Navigator.of(context).pushNamed(secondaryButtonRoute);
         },
       );
     } else {

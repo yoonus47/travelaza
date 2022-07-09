@@ -30,7 +30,7 @@ class FirstView extends StatelessWidget {
                 ),
                 SizedBox(height: _height * 0.10),
                 AutoSizeText(
-                  "Let’s start planning your next trip",
+                  "Lets start planning your next trip",
                   maxLines: 2,
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -65,7 +65,7 @@ class FirstView extends StatelessWidget {
                         primaryButtonText: "Create My Account",
                         primaryButtonRoute: "/signUp",
                         secondaryButtonText: "Maybe Later",
-                        secondaryButtonRoute: "/home",
+                        secondaryButtonRoute: "/indev",
                       ),
                     );
                   },
@@ -76,7 +76,9 @@ class FirstView extends StatelessWidget {
                     "Sign In",
                     style: TextStyle(color: Color(0xFFF9DF90), fontSize: 25),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/login');
+                  },
                 )
               ],
             ),
