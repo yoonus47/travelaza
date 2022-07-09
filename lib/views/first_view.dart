@@ -30,7 +30,7 @@ class FirstView extends StatelessWidget {
                 ),
                 SizedBox(height: _height * 0.10),
                 AutoSizeText(
-                  "Let’s start planning your next trip",
+                  "Lets start planning your next trip",
                   maxLines: 2,
                   textAlign: TextAlign.center,
                   style: TextStyle(

@@ -1,7 +1,7 @@
 travelaza
 2.16
-file:///Users/yoonus/Desktop/FlutterProjs/travelaza/
-file:///Users/yoonus/Desktop/FlutterProjs/travelaza/lib/
+file:///Users/yoonus/Desktop/FlutterProjs/advsafe/travelaza/
+file:///Users/yoonus/Desktop/FlutterProjs/advsafe/travelaza/lib/
 archive
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/archive-3.3.0/
@@ -58,6 +58,10 @@ cupertino_icons
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/lib/
+dio
+2.12
+file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.6/
+file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.6/lib/
 fake_async
 2.12
 file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/

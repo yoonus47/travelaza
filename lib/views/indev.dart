@@ -13,7 +13,7 @@ class InDev extends StatelessWidget {
         ),
       ),
       body: Text(
-        'This application is under developement',
+        'This feauture is under developement',
         style: TextStyle(
           color: Color(0xFFF9DF90),
           fontSize: 30,

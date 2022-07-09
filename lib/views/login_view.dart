@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
+            padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: emailController,
               decoration: InputDecoration(
@@ -42,7 +42,9 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
+            padding: const EdgeInsets.all(
+              8.0,
+            ),
             child: TextField(
               controller: passwordController,
               obscureText: true,
@@ -53,12 +55,16 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-            onPressed: () {
-              authService.signInWithEmailAndPassword(
-                emailController.text,
-                passwordController.text,
-              );
-              Navigator.pushNamed(context, '/');
+            onPressed: () async {
+              try {
+                authService.signInWithEmailAndPassword(
+                  emailController.text,
+                  passwordController.text,
+                );
+                Navigator.pushNamed(context, '/');
+              } catch (e) {
+                print(e);
+              }
             },
             child: Text('Login'),
           ),

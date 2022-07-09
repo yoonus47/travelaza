@@ -26,7 +26,7 @@ class NewTripBudgetView extends StatelessWidget {
               Text("Location ${trip.title}"),
               Text("Start Date ${trip.startDate}"),
               Text("End Date ${trip.endDate}"),
-              RaisedButton(
+              ElevatedButton(
                 child: Text('Finish'),
                 onPressed: () async {
                   //save data to FB
