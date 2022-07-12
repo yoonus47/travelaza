@@ -23,12 +23,12 @@ class NewTripSummaryView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Enter your Budget'),
-              Text("Location ${trip.title}"),
+              Text("Location: ${trip.title}"),
+              Text('Your Budget: ${trip.budget}'),
               Text("Start Date ${trip.startDate}"),
               Text("End Date ${trip.endDate}"),
               ElevatedButton(
-                child: Text('COntinue'),
+                child: Text('Continue'),
                 onPressed: () async {
                   //save data to FB
                   final uid = await AuthService().getCurrentUID();
