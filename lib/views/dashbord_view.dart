@@ -81,13 +81,17 @@ class DashbordView extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(6, 6, 6, 6),
       child: Card(
         color: Color.fromARGB(255, 246, 235, 244),
+        elevation: 10,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5),
+        ),
         child: InkWell(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.fromLTRB(16.0, 16.0, 6.0, 16.0),
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 50.0, 0, 25.0),
+                  padding: const EdgeInsets.fromLTRB(0, 40.0, 0, 35.0),
                   child: Row(
                     children: [
                       Text(
@@ -98,7 +102,15 @@ class DashbordView extends StatelessWidget {
                           color: Color.fromARGB(255, 2, 59, 89),
                         ),
                       ),
-                      Spacer()
+                      Spacer(),
+                      IconButton(
+                        iconSize: 32,
+                        icon: Icon(
+                          Icons.more_vert,
+                        ),
+                        color: Color.fromARGB(255, 2, 59, 89),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
                 ),
@@ -117,7 +129,7 @@ class DashbordView extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 16.0, 0, 8.0),
+                  padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 8.0),
                   child: Row(
                     children: [
                       Text(

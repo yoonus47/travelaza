@@ -23,14 +23,31 @@ class NewTripSummaryView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Location: ${trip.title}"),
-              Text('Your Budget: ${trip.budget}'),
               Text(
-                  "Start Date: ${DateFormat('dd/MM/yyyy').format(trip.startDate).toString()}"),
+                "Location: ${trip.title}",
+                style: TextStyle(fontSize: 17),
+              ),
               Text(
-                  "End Date: ${DateFormat('dd/MM/yyyy').format(trip.endDate).toString()}"),
+                'Your Budget: ${trip.budget}',
+                style: TextStyle(
+                  fontSize: 17,
+                ),
+              ),
+              Text(
+                "Start Date: ${DateFormat('dd/MM/yyyy').format(trip.startDate).toString()}",
+                style: TextStyle(fontSize: 17),
+              ),
+              Text(
+                "End Date: ${DateFormat('dd/MM/yyyy').format(trip.endDate).toString()}",
+                style: TextStyle(fontSize: 17),
+              ),
               ElevatedButton(
-                child: Text('Continue'),
+                child: Text(
+                  'Continue',
+                  style: TextStyle(
+                    fontSize: 17,
+                  ),
+                ),
                 onPressed: () async {
                   //save data to FB
                   final uid = await AuthService().getCurrentUID();
