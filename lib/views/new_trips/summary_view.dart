@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travelaza/models/Trip.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 
 import 'package:travelaza/widgets/wrapper.dart';
 import 'package:travelaza/services/auth_service.dart';
@@ -12,7 +13,6 @@ class NewTripSummaryView extends StatelessWidget {
   final Trip trip;
   NewTripSummaryView({Key? key, @required required this.trip})
       : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +25,10 @@ class NewTripSummaryView extends StatelessWidget {
             children: [
               Text("Location: ${trip.title}"),
               Text('Your Budget: ${trip.budget}'),
-              Text("Start Date ${trip.startDate}"),
-              Text("End Date ${trip.endDate}"),
+              Text(
+                  "Start Date: ${DateFormat('dd/MM/yyyy').format(trip.startDate).toString()}"),
+              Text(
+                  "End Date: ${DateFormat('dd/MM/yyyy').format(trip.endDate).toString()}"),
               ElevatedButton(
                 child: Text('Continue'),
                 onPressed: () async {

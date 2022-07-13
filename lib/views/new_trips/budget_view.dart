@@ -85,7 +85,7 @@ class _NewTripBudgetViewState extends State<NewTripBudgetView> {
       fields.add(
           generateTextField(_foodController, "Daily Estimated Food Budget"));
       fields.add(generateTextField(
-          _lodgingController, "Daily Estimated Lodging Budget"));
+          _lodgingController, "Daily Estimated Accomodation Budget"));
       fields.add(generateTextField(
           _entertainmentController, "Daily Estimated Entertainment Budget"));
       fields.add(Text("Total: ₹ $_budgetTotal"));
