@@ -87,7 +87,7 @@ class DashbordView extends StatelessWidget {
         ),
         child: InkWell(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(16.0, 16.0, 6.0, 16.0),
+            padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 16.0),
             child: Column(
               children: <Widget>[
                 Padding(
@@ -103,13 +103,26 @@ class DashbordView extends StatelessWidget {
                         ),
                       ),
                       Spacer(),
-                      IconButton(
-                        iconSize: 32,
+                      PopupMenuButton(
                         icon: Icon(
                           Icons.more_vert,
+                          size: 32,
                         ),
-                        color: Color.fromARGB(255, 2, 59, 89),
-                        onPressed: () {},
+                        itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+                          const PopupMenuItem(
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.cancel_rounded,
+                                color: Color.fromARGB(255, 2, 59, 89),
+                              ),
+                              title: Text(
+                                'Cancel Trip',
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 2, 59, 89)),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
