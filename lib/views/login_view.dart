@@ -14,7 +14,6 @@ class LoginScreen extends StatelessWidget {
 
     final authService = Provider.of<AuthService>(context);
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: Text('Sign In'),
         automaticallyImplyLeading: false,
@@ -29,7 +28,7 @@ class LoginScreen extends StatelessWidget {
           Container(
             height: 100,
             child: Image(
-              image: AssetImage("images/background.png"),
+              image: AssetImage("images/travo.png"),
               fit: BoxFit.contain,
             ),
           ),

@@ -28,7 +28,7 @@ class SignUpScreen extends StatelessWidget {
           Container(
             height: 100,
             child: Image(
-              image: AssetImage("images/welcome.png"),
+              image: AssetImage("images/travo.png"),
               fit: BoxFit.contain,
             ),
           ),
