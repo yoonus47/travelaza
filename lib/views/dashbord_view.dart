@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import 'new_trips/location_view.dart';
 import 'package:travelaza/models/Trip.dart';
@@ -94,15 +95,17 @@ class DashbordView extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(0, 40.0, 0, 35.0),
                   child: Row(
                     children: [
-                      Text(
-                        trip['title'],
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25.0,
-                          color: Color.fromARGB(255, 2, 59, 89),
+                      Expanded(
+                        child: AutoSizeText(
+                          trip['title'],
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25.0,
+                            color: Color.fromARGB(255, 2, 59, 89),
+                          ),
+                          maxLines: 3,
                         ),
                       ),
-                      Spacer(),
                       PopupMenuButton(
                         icon: Icon(
                           Icons.more_vert,

@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            icon: Icon(Icons.undo),
+            icon: Icon(Icons.logout_rounded),
             onPressed: () async {
               try {
                 await authService.signOut();
