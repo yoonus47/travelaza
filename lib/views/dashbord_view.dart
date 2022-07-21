@@ -107,9 +107,11 @@ class DashbordView extends StatelessWidget {
                         ),
                       ),
                       PopupMenuButton(
+                        color: Color.fromARGB(255, 246, 235, 244),
                         icon: Icon(
                           Icons.more_vert,
                           size: 32,
+                          color: Color.fromARGB(255, 72, 38, 115),
                         ),
                         itemBuilder: (BuildContext context) => <PopupMenuEntry>[
                           const PopupMenuItem(
@@ -121,7 +123,9 @@ class DashbordView extends StatelessWidget {
                               title: Text(
                                 'Cancel Trip',
                                 style: TextStyle(
-                                    color: Color.fromARGB(255, 2, 59, 89)),
+                                  color: Color.fromARGB(255, 2, 59, 89),
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
                           ),
