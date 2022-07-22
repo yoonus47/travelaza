@@ -57,8 +57,8 @@ class _NewTripDateViewState extends State<NewTripDateView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              buildSelectedDetails(context, widget.trip),
               getImage(widget.trip.photoReference),
+              buildSelectedDetails(context, widget.trip),
               Spacer(),
               Text("Location ${widget.trip.title}"),
               ElevatedButton(
