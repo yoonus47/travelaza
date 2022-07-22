@@ -117,8 +117,8 @@ class _NewTripDateViewState extends State<NewTripDateView> {
           width: MediaQuery.of(context).size.width * 0.60,
           child: RaisedButton(
             child: Text("Choose Dates"),
-            color: Colors.deepPurpleAccent,
-            textColor: Colors.white,
+            color: Color(0xFF1A395A),
+            textColor: Color(0xFFF9DF90),
             onPressed: _show,
           ),
         ),
@@ -126,7 +126,8 @@ class _NewTripDateViewState extends State<NewTripDateView> {
           width: MediaQuery.of(context).size.width * 0.60,
           child: RaisedButton(
             child: Text('Continue'),
-            color: Colors.amberAccent,
+            color: Color(0xFF1A395A),
+            textColor: Color(0xFFF9DF90),
             onPressed: () {
               widget.trip.startDate = _startDate;
               widget.trip.endDate = _endDate;
@@ -161,19 +162,19 @@ class _NewTripDateViewState extends State<NewTripDateView> {
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
                     "${DateFormat('dd-MM').format(_startDate).toString()}",
-                    style: TextStyle(fontSize: 35, color: Colors.deepPurple),
+                    style: TextStyle(fontSize: 35, color: Color(0xFF1A395A)),
                   ),
                 ),
                 Text(
                   "${DateFormat('yyyy').format(_startDate).toString()}",
-                  style: TextStyle(color: Colors.deepPurple),
+                  style: TextStyle(color: Color(0xFF1A395A)),
                 ),
               ],
             ),
             Container(
                 child: Icon(
               Icons.arrow_forward,
-              color: Colors.deepOrange,
+              color: Colors.pink,
               size: 45,
             )),
             Column(
@@ -185,12 +186,12 @@ class _NewTripDateViewState extends State<NewTripDateView> {
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
                     "${DateFormat('dd-MM').format(_endDate).toString()}",
-                    style: TextStyle(fontSize: 35, color: Colors.deepPurple),
+                    style: TextStyle(fontSize: 35, color: Color(0xFF1A395A)),
                   ),
                 ),
                 Text(
                   "${DateFormat('yyyy').format(_endDate).toString()}",
-                  style: TextStyle(color: Colors.deepPurple),
+                  style: TextStyle(color: Color(0xFF1A395A)),
                 ),
               ],
             ),
@@ -225,7 +226,9 @@ class _NewTripDateViewState extends State<NewTripDateView> {
                               Flexible(
                                 child: AutoSizeText(trip.title,
                                     maxLines: 3,
-                                    style: TextStyle(fontSize: 25.0)),
+                                    style: TextStyle(
+                                        fontSize: 25.0,
+                                        color: Color(0xFF1A395A))),
                               ),
                             ],
                           ),
