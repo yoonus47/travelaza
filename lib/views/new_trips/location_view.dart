@@ -24,11 +24,11 @@ class _NewTripLocationViewState extends State<NewTripLocationView> {
   late String _heading;
   List<Place> _placesList = [];
   final List<Place> _suggestedList = [
-    Place("Hyderabad", 3500.00),
-    Place("Wayanad", 2500.00),
-    Place("Mysore", 3000.00),
-    Place("Munnar", 1500.00),
-    Place("Chennai", 2500.00),
+    // Place("Hyderabad", 3500.00),
+    // Place("Wayanad", 2500.00),
+    // Place("Mysore", 3000.00),
+    // Place("Munnar", 1500.00),
+    // Place("Chennai", 2500.00),
   ];
 
   @override
@@ -75,15 +75,24 @@ class _NewTripLocationViewState extends State<NewTripLocationView> {
 
     for (var i = 0; i < predictions.length; i++) {
       String name = predictions[i]['description'];
+      String placeId = predictions[i]['place_id'];
+
       // TODO figure out the budget
       double averageBudget = 200.0;
-      _displayResults.add(Place(name, averageBudget));
+      _displayResults.add(Place(name, averageBudget, placeId));
     }
 
     setState(() {
       _heading = "Results";
       _placesList = _displayResults;
     });
+  }
+
+  Future<String> getLocationPhotoRef(placeId) async {
+    String placeImgRequest =
+        'https://maps.googleapis.com/maps/api/place/details/json?place_id=$placeId&fields=photo&key=$PLACES_API_KEY';
+    Response placeDetails = await Dio().get(placeImgRequest);
+    return placeDetails.data["result"]["photos"][0]["photo_reference"];
   }
 
   @override
@@ -166,8 +175,11 @@ class _NewTripLocationViewState extends State<NewTripLocationView> {
                   // )
                 ],
               ),
-              onTap: () {
+              onTap: () async {
+                String photoReference =
+                    await getLocationPhotoRef(_placesList[index].placeId);
                 widget.trip.title = _placesList[index].name;
+                widget.trip.photoReference = photoReference;
                 // TODO maybe pass the trip average budget through here too...
                 // that would need to be added to the Trip object
                 Navigator.push(

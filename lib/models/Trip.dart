@@ -5,6 +5,7 @@ class Trip {
   double budget;
   Map budgetTypes;
   String travelType;
+  String? photoReference;
 
   Trip(this.title, this.startDate, this.endDate, this.budget, this.budgetTypes,
       this.travelType);

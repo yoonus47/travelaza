@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:travelaza/credentials.dart';
 import 'package:travelaza/models/Trip.dart';
 import 'package:intl/intl.dart';
 import 'budget_view.dart';
@@ -37,6 +38,15 @@ class _NewTripDateViewState extends State<NewTripDateView> {
     }
   }
 
+  Image getImage(photoReference) {
+    final baseUrl = "https://maps.googleapis.com/maps/api/place/photo";
+    final maxWidth = "400";
+    final maxHeight = "200";
+    final url =
+        "$baseUrl?maxwidth=$maxWidth&maxheight=$maxHeight&photoreference=$photoReference&key=$PLACES_API_KEY";
+    return Image.network(url);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +58,7 @@ class _NewTripDateViewState extends State<NewTripDateView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               buildSelectedDetails(context, widget.trip),
+              getImage(widget.trip.photoReference),
               Spacer(),
               Text("Location ${widget.trip.title}"),
               ElevatedButton(
@@ -135,14 +146,6 @@ class _NewTripDateViewState extends State<NewTripDateView> {
                       ),
                     ),
                   ),
-                  Column(
-                    children: <Widget>[
-                      Placeholder(
-                        fallbackHeight: 100,
-                        fallbackWidth: 100,
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
