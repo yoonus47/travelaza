@@ -81,3 +81,7 @@ class _HomeState extends State<Home> {
 // darkteal    Color.fromARGB(255, 2, 59, 89),
 // primary blue   Color(0xFF1A395A),
 // secondary gold Color(0xFFF9DF90),
+
+// bg_grey    Color.fromARGB(255, 245, 245, 247)
+// box_grey   Color.fromARGB(255, 234, 232, 236)
+// purpletext Color.fromARGB(255, 185, 51, 105)

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/models/Trip.dart';
 
@@ -9,8 +10,9 @@ class TripDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tripDays = trip.endDate.difference(trip.startDate).inDays;
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 234, 232, 232),
+      backgroundColor: Color.fromARGB(255, 245, 245, 247),
       appBar: AppBar(
         title: Text('Trip Details'),
       ),
@@ -26,7 +28,7 @@ class TripDetailView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
-                color: Color.fromARGB(255, 199, 196, 196),
+                color: Color.fromARGB(255, 234, 232, 236),
                 child: Row(
                   children: <Widget>[
                     Expanded(
@@ -37,7 +39,7 @@ class TripDetailView extends StatelessWidget {
                               maxLines: 3,
                               style: TextStyle(
                                   fontSize: 30.0,
-                                  color: Color.fromARGB(255, 121, 11, 48),
+                                  color: Color.fromARGB(255, 2, 59, 89),
                                   fontWeight: FontWeight.w600)),
                         ),
                       ),
@@ -64,7 +66,7 @@ class TripDetailView extends StatelessWidget {
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 199, 196, 196),
+                      color: Color.fromARGB(255, 234, 232, 236),
                       borderRadius: BorderRadius.circular(10),
                       shape: BoxShape.rectangle,
                     ),
@@ -75,11 +77,13 @@ class TripDetailView extends StatelessWidget {
                           alignment: AlignmentDirectional(-1, 0),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(30, 30, 0, 0),
                             child: Text(
-                              'Days',
+                              tripDays.toString(),
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w900),
+                                color: Color.fromARGB(255, 185, 51, 105),
+                                fontSize: 90,
+                              ),
                             ),
                           ),
                         ),
@@ -87,13 +91,11 @@ class TripDetailView extends StatelessWidget {
                           alignment: AlignmentDirectional(-1, 0),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 20, 0, 20),
+                                EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
                             child: Text(
-                              '4',
+                              'Days',
                               style: TextStyle(
-                                color: Color.fromARGB(255, 121, 11, 48),
-                                fontSize: 60,
-                              ),
+                                  fontSize: 20, fontWeight: FontWeight.w600),
                             ),
                           ),
                         ),
@@ -107,9 +109,41 @@ class TripDetailView extends StatelessWidget {
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 199, 196, 196),
+                      color: Color.fromARGB(255, 234, 232, 236),
                       borderRadius: BorderRadius.circular(10),
                       shape: BoxShape.rectangle,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 8, 0, 0),
+                            child: Text(
+                              'Budget',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 8.5, 0, 0),
+                            child: AutoSizeText(
+                              "INR ${(tripDays * trip.budget).toString()}",
+                              maxLines: 3,
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 185, 51, 105),
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -119,9 +153,37 @@ class TripDetailView extends StatelessWidget {
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 199, 196, 196),
+                      color: Color.fromARGB(255, 234, 232, 236),
                       borderRadius: BorderRadius.circular(10),
                       shape: BoxShape.rectangle,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 10, 0, 0),
+                            child: Text(
+                              'Mode Of Travel',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
+                              child: Icon(
+                                Icons.pedal_bike_rounded,
+                                size: 90,
+                                color: Color.fromARGB(255, 185, 51, 105),
+                              )),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -131,9 +193,40 @@ class TripDetailView extends StatelessWidget {
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 199, 196, 196),
+                      color: Color.fromARGB(255, 234, 232, 236),
                       borderRadius: BorderRadius.circular(10),
                       shape: BoxShape.rectangle,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                            child: Text(
+                              'Dates',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                            child: Text(
+                              "${DateFormat('dd/MM').format(trip.startDate).toString()}  - ${DateFormat('dd/MM').format(trip.endDate).toString()}",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 185, 51, 105),
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -143,9 +236,40 @@ class TripDetailView extends StatelessWidget {
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 199, 196, 196),
+                      color: Color.fromARGB(255, 234, 232, 236),
                       borderRadius: BorderRadius.circular(10),
                       shape: BoxShape.rectangle,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(15, 30, 0, 0),
+                            child: Text(
+                              'Family',
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 185, 51, 105),
+                                  fontSize: 50,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 30, 0, 0),
+                            child: Text(
+                              'Trip',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -155,9 +279,40 @@ class TripDetailView extends StatelessWidget {
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 199, 196, 196),
+                      color: Color.fromARGB(255, 234, 232, 236),
                       borderRadius: BorderRadius.circular(10),
                       shape: BoxShape.rectangle,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(30, 9, 0, 0),
+                            child: Text(
+                              '4',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 185, 51, 105),
+                                fontSize: 90,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(30, 10, 0, 0),
+                            child: Text(
+                              'People',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -168,7 +323,10 @@ class TripDetailView extends StatelessWidget {
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.60,
                 child: ElevatedButton(
-                  child: Text("Manage Schedule"),
+                  child: Text(
+                    "Manage Schedule",
+                    style: TextStyle(fontSize: 20),
+                  ),
                   onPressed: () {},
                 ),
               ),
