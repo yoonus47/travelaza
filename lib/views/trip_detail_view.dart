@@ -9,28 +9,32 @@ class TripDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('Trip Details'),
+        ),
         body: Center(
-      child: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            title: Text('Trip Details'),
-            backgroundColor: Colors.pink,
-            expandedHeight: 350,
-            flexibleSpace: FlexibleSpaceBar(
-              background: trip.getLocationImage(),
-            ),
+          child: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                // title: Text('Trip Details'),
+                // backgroundColor: Colors.pink,
+                automaticallyImplyLeading: false,
+                expandedHeight: 350,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: trip.getLocationImage(),
+                ),
+              ),
+              SliverFixedExtentList(
+                itemExtent: 200.00,
+                delegate: SliverChildListDelegate([
+                  Text(trip.title),
+                  Text(trip.budget.toString()),
+                  Text(trip.startDate.toString()),
+                  Text(trip.endDate.toString()),
+                ]),
+              )
+            ],
           ),
-          SliverFixedExtentList(
-            itemExtent: 200.00,
-            delegate: SliverChildListDelegate([
-              Text(trip.title),
-              Text(trip.budget.toString()),
-              Text(trip.startDate.toString()),
-              Text(trip.endDate.toString()),
-            ]),
-          )
-        ],
-      ),
-    ));
+        ));
   }
 }

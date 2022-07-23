@@ -41,63 +41,65 @@ class _NewTripDateViewState extends State<NewTripDateView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('Create Plan - Date'),
+        ),
         body: Center(
-      child: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            title: Text('Create Plan - Date'),
-            backgroundColor: Colors.pink,
-            expandedHeight: 350,
-            flexibleSpace: FlexibleSpaceBar(
-              background: widget.trip.getLocationImage(),
-            ),
+          child: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                automaticallyImplyLeading: false,
+                expandedHeight: 300,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: widget.trip.getLocationImage(),
+                ),
+              ),
+              SliverFixedExtentList(
+                itemExtent: 150.00,
+                delegate: SliverChildListDelegate([
+                  buildSelectedDetails(context, widget.trip),
+                  buildButtons(),
+                ]),
+              )
+            ],
+            // child: Column(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     getImage(widget.trip.photoReference),
+            //     buildSelectedDetails(context, widget.trip),
+            //     Spacer(),
+            //     Text("Location ${widget.trip.title}"),
+            //     ElevatedButton(
+            //       child: Text("Select Dates"),
+            //       onPressed: _show,
+            //     ),
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //       children: <Widget>[
+            //         Text(
+            //             "Start Date: ${DateFormat('dd/MM/yyyy').format(_startDate).toString()}"),
+            //         Text(
+            //             "End Date: ${DateFormat('dd/MM/yyyy').format(_endDate).toString()}"),
+            //       ],
+            //     ),
+            //     ElevatedButton(
+            //       child: Text('Continue'),
+            //       onPressed: () {
+            //         widget.trip.startDate = _startDate;
+            //         widget.trip.endDate = _endDate;
+            //         Navigator.push(
+            //           context,
+            //           MaterialPageRoute(
+            //               builder: (context) =>
+            //                   NewTripBudgetView(trip: widget.trip)),
+            //         );
+            //       },
+            //     ),
+            //     Spacer(),
+            //   ],
+            // ),
           ),
-          SliverFixedExtentList(
-            itemExtent: 200.00,
-            delegate: SliverChildListDelegate([
-              buildSelectedDetails(context, widget.trip),
-              buildButtons(),
-            ]),
-          )
-        ],
-        // child: Column(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   children: [
-        //     getImage(widget.trip.photoReference),
-        //     buildSelectedDetails(context, widget.trip),
-        //     Spacer(),
-        //     Text("Location ${widget.trip.title}"),
-        //     ElevatedButton(
-        //       child: Text("Select Dates"),
-        //       onPressed: _show,
-        //     ),
-        //     Row(
-        //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //       children: <Widget>[
-        //         Text(
-        //             "Start Date: ${DateFormat('dd/MM/yyyy').format(_startDate).toString()}"),
-        //         Text(
-        //             "End Date: ${DateFormat('dd/MM/yyyy').format(_endDate).toString()}"),
-        //       ],
-        //     ),
-        //     ElevatedButton(
-        //       child: Text('Continue'),
-        //       onPressed: () {
-        //         widget.trip.startDate = _startDate;
-        //         widget.trip.endDate = _endDate;
-        //         Navigator.push(
-        //           context,
-        //           MaterialPageRoute(
-        //               builder: (context) =>
-        //                   NewTripBudgetView(trip: widget.trip)),
-        //         );
-        //       },
-        //     ),
-        //     Spacer(),
-        //   ],
-        // ),
-      ),
-    ));
+        ));
   }
 
   Widget buildButtons() {
@@ -161,7 +163,7 @@ class _NewTripDateViewState extends State<NewTripDateView> {
             Container(
                 child: Icon(
               Icons.arrow_forward,
-              color: Color(0xFFF9DF90),
+              color: Color(0xFF1A395A),
               size: 45,
             )),
             Column(
