@@ -26,8 +26,9 @@ class Trip {
   Image getLocationImage() {
     final baseUrl = "https://maps.googleapis.com/maps/api/place/photo";
     final maxWidth = "1000";
+    final maxHeight = "500";
     final url =
-        "$baseUrl?maxwidth=$maxWidth&photoreference=$photoReference&key=$PLACES_API_KEY";
-    return Image.network(url, fit: BoxFit.cover);
+        "$baseUrl?maxwidth=$maxWidth&maxheight=$maxHeight&photoreference=$photoReference&key=$PLACES_API_KEY";
+    return Image.network(url, height: 300, fit: BoxFit.cover);
   }
 }
