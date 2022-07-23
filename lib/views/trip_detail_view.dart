@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/models/Trip.dart';
 
 class TripDetailView extends StatelessWidget {
@@ -21,6 +22,29 @@ class TripDetailView extends StatelessWidget {
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: trip.getLocationImage()),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Color.fromARGB(255, 199, 196, 196),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                        child: Flexible(
+                          child: AutoSizeText(trip.title,
+                              maxLines: 3,
+                              style: TextStyle(
+                                  fontSize: 30.0,
+                                  color: Color.fromARGB(255, 121, 11, 48),
+                                  fontWeight: FontWeight.w600)),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
             GridView(
               physics: ScrollPhysics(),
