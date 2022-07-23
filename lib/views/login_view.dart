@@ -53,31 +53,30 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.60,
-            child: ElevatedButton(
-              onPressed: () async {
-                try {
-                  authService.signInWithEmailAndPassword(
-                    emailController.text,
-                    passwordController.text,
-                  );
-                  Navigator.pushNamed(context, '/');
-                } catch (e) {
-                  print(e);
-                }
-              },
-              child: Text('Login'),
-            ),
+          RaisedButton(
+            color: Colors.pink,
+            textColor: Colors.white,
+            
+            onPressed: () async {
+              try {
+                authService.signInWithEmailAndPassword(
+                  emailController.text,
+                  passwordController.text,
+                );
+                Navigator.pushNamed(context, '/');
+              } catch (e) {
+                print(e);
+              }
+            },
+            child: Text('Login'),
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.60,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/signUp');
-              },
-              child: Text('Create an account'),
-            ),
+          RaisedButton(
+            color: Colors.pink,
+            textColor: Colors.white,
+            onPressed: () {
+              Navigator.pushNamed(context, '/signUp');
+            },
+            child: Text('Create an account'),
           ),
         ],
       ),
