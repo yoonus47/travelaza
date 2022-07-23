@@ -53,25 +53,31 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
           ),
-          ElevatedButton(
-            onPressed: () async {
-              try {
-                authService.signInWithEmailAndPassword(
-                  emailController.text,
-                  passwordController.text,
-                );
-                Navigator.pushNamed(context, '/');
-              } catch (e) {
-                print(e);
-              }
-            },
-            child: Text('Login'),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.60,
+            child: ElevatedButton(
+              onPressed: () async {
+                try {
+                  authService.signInWithEmailAndPassword(
+                    emailController.text,
+                    passwordController.text,
+                  );
+                  Navigator.pushNamed(context, '/');
+                } catch (e) {
+                  print(e);
+                }
+              },
+              child: Text('Login'),
+            ),
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/signUp');
-            },
-            child: Text('Create an account'),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.60,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/signUp');
+              },
+              child: Text('Create an account'),
+            ),
           ),
         ],
       ),

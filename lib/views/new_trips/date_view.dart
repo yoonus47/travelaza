@@ -115,19 +115,15 @@ class _NewTripDateViewState extends State<NewTripDateView> {
       children: <Widget>[
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.60,
-          child: RaisedButton(
+          child: ElevatedButton(
             child: Text("Choose Dates"),
-            color: Color(0xFF1A395A),
-            textColor: Color(0xFFF9DF90),
             onPressed: _show,
           ),
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.60,
-          child: RaisedButton(
+          child: ElevatedButton(
             child: Text('Continue'),
-            color: Color(0xFF1A395A),
-            textColor: Color(0xFFF9DF90),
             onPressed: () {
               widget.trip.startDate = _startDate;
               widget.trip.endDate = _endDate;
@@ -174,7 +170,7 @@ class _NewTripDateViewState extends State<NewTripDateView> {
             Container(
                 child: Icon(
               Icons.arrow_forward,
-              color: Colors.pink,
+              color: Color(0xFFF9DF90),
               size: 45,
             )),
             Column(

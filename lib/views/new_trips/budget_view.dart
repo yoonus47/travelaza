@@ -91,48 +91,54 @@ class _NewTripBudgetViewState extends State<NewTripBudgetView> {
       fields.add(Text("Total: ₹ $_budgetTotal"));
     }
 
-    fields.add(ElevatedButton(
-      child: Text(
-        "Continue",
-        style: TextStyle(fontSize: 25),
-      ),
-      onPressed: () async {
-        widget.trip.budget = _budgetTotal.toDouble();
-        widget.trip.budgetTypes = {
-          'transportation': (_transportationController.text == "")
-              ? 0.0
-              : double.parse(_transportationController.text),
-          'food': (_foodController.text == "")
-              ? 0.0
-              : double.parse(_foodController.text),
-          'lodging': (_lodgingController.text == "")
-              ? 0.0
-              : double.parse(_lodgingController.text),
-          'entertainment': (_entertainmentController.text == "")
-              ? 0.0
-              : double.parse(_entertainmentController.text),
-        };
+    fields.add(SizedBox(
+      width: MediaQuery.of(context).size.width * 0.60,
+      child: ElevatedButton(
+        child: Text(
+          "Continue",
+          style: TextStyle(fontSize: 25),
+        ),
+        onPressed: () async {
+          widget.trip.budget = _budgetTotal.toDouble();
+          widget.trip.budgetTypes = {
+            'transportation': (_transportationController.text == "")
+                ? 0.0
+                : double.parse(_transportationController.text),
+            'food': (_foodController.text == "")
+                ? 0.0
+                : double.parse(_foodController.text),
+            'lodging': (_lodgingController.text == "")
+                ? 0.0
+                : double.parse(_lodgingController.text),
+            'entertainment': (_entertainmentController.text == "")
+                ? 0.0
+                : double.parse(_entertainmentController.text),
+          };
 
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => NewTripSummaryView(trip: widget.trip)),
-        );
-      },
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => NewTripSummaryView(trip: widget.trip)),
+          );
+        },
+      ),
     ));
     fields.add(DividerWithText(dividerText: "or"));
-    fields.add(ElevatedButton(
-      child: Text(
-        _switchButtonText,
-        style: TextStyle(fontSize: 25),
+    fields.add(SizedBox(
+      width: MediaQuery.of(context).size.width * 0.60,
+      child: ElevatedButton(
+        child: Text(
+          _switchButtonText,
+          style: TextStyle(fontSize: 25),
+        ),
+        onPressed: () {
+          setState(() {
+            _budgetState = (_budgetState == budgetType.simple)
+                ? budgetType.complex
+                : budgetType.simple;
+          });
+        },
       ),
-      onPressed: () {
-        setState(() {
-          _budgetState = (_budgetState == budgetType.simple)
-              ? budgetType.complex
-              : budgetType.simple;
-        });
-      },
     ));
 
     return fields;

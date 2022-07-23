@@ -41,23 +41,26 @@ class NewTripSummaryView extends StatelessWidget {
                 "End Date: ${DateFormat('dd/MM/yyyy').format(trip.endDate).toString()}",
                 style: TextStyle(fontSize: 17),
               ),
-              ElevatedButton(
-                child: Text(
-                  'Continue',
-                  style: TextStyle(
-                    fontSize: 17,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.60,
+                child: ElevatedButton(
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
                   ),
+                  onPressed: () async {
+                    //save data to FB
+                    final uid = await AuthService().getCurrentUID();
+                    await db
+                        .collection("userData")
+                        .doc(uid)
+                        .collection("trips")
+                        .add(trip.toJson());
+                    Navigator.of(context).popUntil((route) => route.isFirst);
+                  },
                 ),
-                onPressed: () async {
-                  //save data to FB
-                  final uid = await AuthService().getCurrentUID();
-                  await db
-                      .collection("userData")
-                      .doc(uid)
-                      .collection("trips")
-                      .add(trip.toJson());
-                  Navigator.of(context).popUntil((route) => route.isFirst);
-                },
               ),
             ],
           ),
