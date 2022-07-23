@@ -53,18 +53,17 @@ class SignUpScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.60,
-            child: ElevatedButton(
-              onPressed: () async {
-                await authService.createUserWithEmailAndPassword(
-                  emailController.text,
-                  passwordController.text,
-                );
-                Navigator.pop(context);
-              },
-              child: Text('Sign Up'),
-            ),
+          RaisedButton(
+            color: Colors.pink,
+            textColor: Colors.white,
+            onPressed: () async {
+              await authService.createUserWithEmailAndPassword(
+                emailController.text,
+                passwordController.text,
+              );
+              Navigator.pop(context);
+            },
+            child: Text('Sign Up'),
           )
         ],
       ),
