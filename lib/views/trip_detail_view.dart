@@ -63,7 +63,7 @@ class TripDetailView extends StatelessWidget {
                           alignment: AlignmentDirectional(-1, 0),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 20, 0, 30),
+                                EdgeInsetsDirectional.fromSTEB(20, 20, 0, 20),
                             child: Text(
                               '4',
                               style: TextStyle(
@@ -138,7 +138,17 @@ class TripDetailView extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.60,
+                child: ElevatedButton(
+                  child: Text("Manage Schedule"),
+                  onPressed: () {},
+                ),
+              ),
+            ),
           ],
         ),
 
