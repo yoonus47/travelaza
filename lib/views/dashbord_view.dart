@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:travelaza/views/trip_detail_view.dart';
 
 import 'new_trips/location_view.dart';
 import 'package:travelaza/models/Trip.dart';
@@ -24,6 +25,7 @@ class DashbordView extends StatelessWidget {
           'lodging': 0.0,
           'entertainment': 0.0
         },
+        " ",
         " ");
 
     return Scaffold(
@@ -175,6 +177,7 @@ class DashbordView extends StatelessWidget {
             ),
           ),
           onTap: () {
+            print(trip['title']);
             // widget.trip.title = _placesList[index].name;
             // TODO maybe pass the trip average budget through here too...
             // that would need to be added to the Trip object
@@ -182,7 +185,15 @@ class DashbordView extends StatelessWidget {
               context,
               MaterialPageRoute(
                   // builder: (context) => NewTripDateView(trip: widget.trip)),
-                  builder: (context) => InDev()),
+                  builder: (context) => TripDetailView(
+                      trip: Trip(
+                          trip['title'],
+                          trip['startDate'].toDate(),
+                          trip['endDate'].toDate(),
+                          trip['budget'],
+                          trip['budgetTypes'],
+                          trip['travelType'],
+                          trip['photoReference']))),
             );
           },
         ),
