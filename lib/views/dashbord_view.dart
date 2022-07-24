@@ -31,8 +31,7 @@ class DashbordView extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 2, 59, 89),
-      appBar: ScrollAppBar(
-        controller: controller,
+      appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 2, 59, 89),
         elevation: 0.0,
