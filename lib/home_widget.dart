@@ -27,15 +27,19 @@ class _HomeState extends State<Home> {
         title: Text("Travelaza"),
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(
-            icon: Icon(Icons.logout_rounded),
-            onPressed: () async {
-              try {
-                await authService.signOut();
-              } catch (e) {
-                print(e);
-              }
-            },
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 5, 8),
+            child: IconButton(
+              icon: Icon(Icons.logout_rounded),
+              iconSize: 26,
+              onPressed: () async {
+                try {
+                  await authService.signOut();
+                } catch (e) {
+                  print(e);
+                }
+              },
+            ),
           )
         ],
       ),

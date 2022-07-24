@@ -26,14 +26,15 @@ class DashbordView extends StatelessWidget {
           'entertainment': 0.0
         },
         " ",
+        " ",
         " ");
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 72, 38, 115),
+      backgroundColor: Color.fromARGB(255, 2, 59, 89),
       appBar: ScrollAppBar(
         controller: controller,
         automaticallyImplyLeading: false,
-        backgroundColor: Color.fromARGB(255, 72, 38, 115),
+        backgroundColor: Color.fromARGB(255, 2, 59, 89),
         elevation: 0.0,
         title: Text(
           'Plans',
@@ -115,8 +116,10 @@ class DashbordView extends StatelessWidget {
                           size: 32,
                           color: Color.fromARGB(255, 2, 59, 89),
                         ),
+                        onSelected: (value) => deleteTrip(context, trip.id),
                         itemBuilder: (BuildContext context) => <PopupMenuEntry>[
                           const PopupMenuItem(
+                            value: 1,
                             child: ListTile(
                               leading: Icon(
                                 Icons.cancel_rounded,
@@ -171,33 +174,40 @@ class DashbordView extends StatelessWidget {
                     ],
                   ),
                 )
-
-                //
               ],
             ),
           ),
           onTap: () {
-            print(trip['title']);
-            // widget.trip.title = _placesList[index].name;
-            // TODO maybe pass the trip average budget through here too...
-            // that would need to be added to the Trip object
+            print(trip.id);
             Navigator.push(
               context,
               MaterialPageRoute(
-                  // builder: (context) => NewTripDateView(trip: widget.trip)),
                   builder: (context) => TripDetailView(
-                      trip: Trip(
-                          trip['title'],
-                          trip['startDate'].toDate(),
-                          trip['endDate'].toDate(),
-                          trip['budget'],
-                          trip['budgetTypes'],
-                          trip['travelType'],
-                          trip['photoReference']))),
+                          trip: Trip(
+                        trip['title'],
+                        trip['startDate'].toDate(),
+                        trip['endDate'].toDate(),
+                        trip['budget'],
+                        trip['budgetTypes'],
+                        trip['travelType'],
+                        trip['photoReference'],
+                        trip.id,
+                      ))),
             );
           },
         ),
       ),
     );
+  }
+
+  Future deleteTrip(context, tripid) async {
+    var uid = await AuthService().getCurrentUID();
+    final doc = FirebaseFirestore.instance
+        .collection('userData')
+        .doc(uid)
+        .collection("trips")
+        .doc(tripid);
+
+    return await doc.delete();
   }
 }

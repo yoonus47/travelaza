@@ -20,25 +20,25 @@ class TripDetailView extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 10),
+              padding: EdgeInsetsDirectional.fromSTEB(15, 20, 15, 10),
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: trip.getLocationImage()),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.fromLTRB(15, 10, 10, 15),
               child: Card(
                 color: Color.fromARGB(255, 234, 232, 236),
                 child: Row(
                   children: <Widget>[
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                        padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
                         child: Flexible(
                           child: AutoSizeText(trip.title,
                               maxLines: 3,
                               style: TextStyle(
-                                  fontSize: 30.0,
+                                  fontSize: 35.0,
                                   color: Color.fromARGB(255, 2, 59, 89),
                                   fontWeight: FontWeight.w600)),
                         ),
@@ -61,7 +61,7 @@ class TripDetailView extends StatelessWidget {
               shrinkWrap: true,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  padding: EdgeInsetsDirectional.fromSTEB(15, 10, 7, 10),
                   child: Container(
                     width: 100,
                     height: 100,
@@ -104,7 +104,7 @@ class TripDetailView extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  padding: EdgeInsetsDirectional.fromSTEB(7, 10, 15, 10),
                   child: Container(
                     width: 100,
                     height: 100,
@@ -148,7 +148,7 @@ class TripDetailView extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  padding: EdgeInsetsDirectional.fromSTEB(15, 10, 7, 10),
                   child: Container(
                     width: 100,
                     height: 100,
@@ -188,7 +188,7 @@ class TripDetailView extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  padding: EdgeInsetsDirectional.fromSTEB(7, 10, 15, 10),
                   child: Container(
                     width: 100,
                     height: 100,
@@ -231,7 +231,7 @@ class TripDetailView extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  padding: EdgeInsetsDirectional.fromSTEB(15, 10, 7, 10),
                   child: Container(
                     width: 100,
                     height: 100,
@@ -274,7 +274,7 @@ class TripDetailView extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  padding: EdgeInsetsDirectional.fromSTEB(7, 10, 15, 10),
                   child: Container(
                     width: 100,
                     height: 100,
@@ -319,10 +319,13 @@ class TripDetailView extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+              padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.60,
-                child: ElevatedButton(
+                height: 50,
+                child: RaisedButton(
+                  color: Colors.pink[600],
+                  textColor: Colors.white,
                   child: Text(
                     "Manage Schedule",
                     style: TextStyle(fontSize: 20),

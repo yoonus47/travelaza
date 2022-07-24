@@ -9,9 +9,10 @@ class Trip {
   Map budgetTypes;
   String travelType;
   String photoReference;
+  String tripId;
 
   Trip(this.title, this.startDate, this.endDate, this.budget, this.budgetTypes,
-      this.travelType, this.photoReference);
+      this.travelType, this.photoReference, this.tripId);
 
   Map<String, dynamic> toJson() => {
         'title': title,
