@@ -20,49 +20,55 @@ class NewTripSummaryView extends StatelessWidget {
           title: Text('Trip Summary'),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Location: ${trip.title}",
-                style: TextStyle(fontSize: 17),
-              ),
-              Text(
-                'Your Budget: ${trip.budget}',
-                style: TextStyle(
-                  fontSize: 17,
-                ),
-              ),
-              Text(
-                "Start Date: ${DateFormat('dd/MM/yyyy').format(trip.startDate).toString()}",
-                style: TextStyle(fontSize: 17),
-              ),
-              Text(
-                "End Date: ${DateFormat('dd/MM/yyyy').format(trip.endDate).toString()}",
-                style: TextStyle(fontSize: 17),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.60,
-                child: ElevatedButton(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(30.0, 0, 30, 0),
                   child: Text(
-                    'Continue',
-                    style: TextStyle(
-                      fontSize: 17,
-                    ),
+                    "Location: ${trip.title}",
+                    style: TextStyle(fontSize: 17),
                   ),
-                  onPressed: () async {
-                    //save data to FB
-                    final uid = await AuthService().getCurrentUID();
-                    await db
-                        .collection("userData")
-                        .doc(uid)
-                        .collection("trips")
-                        .add(trip.toJson());
-                    Navigator.of(context).popUntil((route) => route.isFirst);
-                  },
                 ),
-              ),
-            ],
+                Text(
+                  'Your Budget: ${trip.budget}',
+                  style: TextStyle(
+                    fontSize: 17,
+                  ),
+                ),
+                Text(
+                  "Start Date: ${DateFormat('dd/MM/yyyy').format(trip.startDate).toString()}",
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text(
+                  "End Date: ${DateFormat('dd/MM/yyyy').format(trip.endDate).toString()}",
+                  style: TextStyle(fontSize: 17),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.60,
+                  child: ElevatedButton(
+                    child: Text(
+                      'Continue',
+                      style: TextStyle(
+                        fontSize: 17,
+                      ),
+                    ),
+                    onPressed: () async {
+                      //save data to FB
+                      final uid = await AuthService().getCurrentUID();
+                      await db
+                          .collection("userData")
+                          .doc(uid)
+                          .collection("trips")
+                          .add(trip.toJson());
+                      Navigator.of(context).popUntil((route) => route.isFirst);
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
         ));
   }

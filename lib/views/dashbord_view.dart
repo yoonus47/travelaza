@@ -42,19 +42,16 @@ class DashbordView extends StatelessWidget {
               color: Color.fromARGB(255, 246, 235, 244), fontSize: 25),
         ),
       ),
-      body: Snap(
-        controller: controller.appBar,
-        child: StreamBuilder<QuerySnapshot>(
-            stream: getUsersTripsStreamSnapshots(context),
-            builder: (context, snapshot) {
-              if (!snapshot.hasData) return const Text("Loading...");
-              return new ListView.builder(
-                  controller: controller,
-                  itemCount: snapshot.data!.docs.length,
-                  itemBuilder: (BuildContext context, int index) =>
-                      buildTripCard(context, snapshot.data!.docs[index]));
-            }),
-      ),
+      body: StreamBuilder<QuerySnapshot>(
+          stream: getUsersTripsStreamSnapshots(context),
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) return const Text("Loading...");
+            return new ListView.builder(
+                controller: controller,
+                itemCount: snapshot.data!.docs.length,
+                itemBuilder: (BuildContext context, int index) =>
+                    buildTripCard(context, snapshot.data!.docs[index]));
+          }),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           backgroundColor: Color.fromARGB(255, 111, 10, 10),
