@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/models/Trip.dart';
-import 'package:travelaza/views/indev.dart';
+import 'package:travelaza/views/schedule_view.dart';
 
 class TripDetailView extends StatelessWidget {
   final Trip trip;
@@ -332,7 +332,14 @@ class TripDetailView extends StatelessWidget {
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/indev');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ScheduleView(
+                          trip: trip,
+                        ),
+                      ),
+                    );
                   },
                 ),
               ),
