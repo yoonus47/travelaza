@@ -88,4 +88,4 @@ class _HomeState extends State<Home> {
 
 // bg_grey    Color.fromARGB(255, 245, 245, 247)
 // box_grey   Color.fromARGB(255, 234, 232, 236)
-// purpletext Color.fromARGB(255, 185, 51, 105)
+// rosetext Color.fromARGB(255, 185, 51, 105)
