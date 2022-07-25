@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/models/Trip.dart';
+import 'package:travelaza/views/indev.dart';
 
 class TripDetailView extends StatelessWidget {
   final Trip trip;
@@ -177,10 +178,10 @@ class TripDetailView extends StatelessWidget {
                           child: Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
-                              child: Icon(
-                                Icons.pedal_bike_rounded,
-                                size: 90,
-                                color: Color.fromARGB(255, 185, 51, 105),
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                child: Image.asset("assets/icons/bike.png",
+                                    width: 90, height: 90, fit: BoxFit.fill),
                               )),
                         ),
                       ],
@@ -330,7 +331,9 @@ class TripDetailView extends StatelessWidget {
                     "Manage Schedule",
                     style: TextStyle(fontSize: 20),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/indev');
+                  },
                 ),
               ),
             ),
