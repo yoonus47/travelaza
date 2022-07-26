@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:scroll_app_bar/scroll_app_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:travelaza/views/trip_detail_view.dart';
 
-import 'new_trips/location_view.dart';
+import 'package:travelaza/views/trip_detail_view.dart';
+import 'package:travelaza/views/new_trips/location_view.dart';
 import 'package:travelaza/models/Trip.dart';
 import 'package:travelaza/services/auth_service.dart';
-import 'package:travelaza/views/indev.dart';
 
 class DashbordView extends StatelessWidget {
   final controller = ScrollController();
@@ -36,7 +34,7 @@ class DashbordView extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 2, 59, 89),
         elevation: 0.0,
         title: Text(
-          'Plans',
+          'My Plans',
           style: TextStyle(
               color: Color.fromARGB(255, 246, 235, 244), fontSize: 25),
         ),
@@ -44,7 +42,11 @@ class DashbordView extends StatelessWidget {
       body: StreamBuilder<QuerySnapshot>(
           stream: getUsersTripsStreamSnapshots(context),
           builder: (context, snapshot) {
-            if (!snapshot.hasData) return const Text("Loading...");
+            if (!snapshot.hasData)
+              return const Text(
+                "Loading...",
+                style: TextStyle(fontSize: 18, color: Colors.amber),
+              );
             return new ListView.builder(
                 controller: controller,
                 itemCount: snapshot.data!.docs.length,
