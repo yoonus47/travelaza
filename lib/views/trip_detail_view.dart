@@ -11,7 +11,7 @@ class TripDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tripDays = trip.endDate.difference(trip.startDate).inDays;
+    final tripDays = trip.endDate.difference(trip.startDate).inDays + 1;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 245, 245, 247),
       appBar: AppBar(
