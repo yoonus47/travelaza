@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:travelaza/views/indev.dart';
+import 'package:travelaza/widgets/event_provider.dart';
 
 import 'home_widget.dart';
 import 'package:travelaza/services/auth_service.dart';
@@ -23,8 +24,11 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider<AuthService>(
-          create: (_) => AuthService(),
+          create: (context) => AuthService(),
         ),
+        Provider<EventProvider>(
+          create: (context) => EventProvider(),
+        )
       ],
       child: MaterialApp(
         title: "Travelaza",

@@ -46,7 +46,7 @@ class _ScheduleViewState extends State<ScheduleView> {
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: () => Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => AddEvent()))),
+              .push(MaterialPageRoute(builder: (context) => AddEventView()))),
     );
   }
 }
