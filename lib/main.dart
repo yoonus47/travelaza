@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         Provider<AuthService>(
           create: (context) => AuthService(),
         ),
-        Provider<EventProvider>(
+        ListenableProvider<EventProvider>(
           create: (context) => EventProvider(),
         )
       ],

@@ -235,7 +235,7 @@ class _AddEventViewState extends State<AddEventView> {
           to: toDate,
           isAllDay: false);
 
-      final provider = Provider.of<EventProvider>(context, listen: isValid);
+      final provider = Provider.of<EventProvider>(context, listen: false);
       provider.addEvent(event);
 
       Navigator.of(context).pop();
