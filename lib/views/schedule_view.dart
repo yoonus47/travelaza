@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
+import 'package:travelaza/models/event.dart';
+import 'package:travelaza/models/event_data_source.dart';
 
 import 'package:travelaza/views/add_event_view.dart';
 
 import 'package:travelaza/models/Trip.dart';
+import 'package:travelaza/widgets/event_provider.dart';
 
 class ScheduleView extends StatefulWidget {
   final Trip trip;
@@ -19,6 +23,7 @@ class ScheduleView extends StatefulWidget {
 class _ScheduleViewState extends State<ScheduleView> {
   @override
   Widget build(BuildContext context) {
+    final events = Provider.of<EventProvider>(context).events;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 245, 245, 247),
       appBar: AppBar(
@@ -33,6 +38,7 @@ class _ScheduleViewState extends State<ScheduleView> {
         // allowedViews: [CalendarView.day,CalendarView.week,CalendarView.workWeek],
         // showNavigationArrow: true,
         // showDatePickerButton: true,
+        dataSource: EventDataSource(events),
         backgroundColor: Color.fromARGB(255, 246, 235, 244),
         headerStyle: CalendarHeaderStyle(textStyle: TextStyle(fontSize: 25)),
         headerHeight: 50,
