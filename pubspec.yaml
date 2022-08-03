@@ -54,7 +54,8 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/appicon_square/1024.png"
+  image_path_android: "assets/app_icon/1024.png"
+  image_path_ios: "assets/app_icon/ios/AppIcon.appiconset/Icon-App-60x60@3x.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
