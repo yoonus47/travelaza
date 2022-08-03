@@ -24,7 +24,11 @@ class _HomeState extends State<Home> {
     final authService = Provider.of<AuthService>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Travelaza"),
+        title: Text(
+          "Travelaza",
+          style: TextStyle(fontSize: 25),
+        ),
+        centerTitle: false,
         automaticallyImplyLeading: false,
         actions: [
           Padding(

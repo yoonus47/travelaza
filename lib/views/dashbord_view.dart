@@ -35,10 +35,13 @@ class DashbordView extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 2, 59, 89),
         elevation: 0.0,
+        centerTitle: false,
         title: Text(
           'Plans',
           style: TextStyle(
-              color: Color.fromARGB(255, 246, 235, 244), fontSize: 25),
+            color: Color.fromARGB(255, 246, 235, 244),
+            fontSize: 30,
+          ),
         ),
       ),
       body: StreamBuilder<QuerySnapshot>(
@@ -78,7 +81,7 @@ class DashbordView extends StatelessWidget {
 
   Widget buildTripCard(BuildContext context, DocumentSnapshot trip) {
     return Container(
-      padding: EdgeInsets.fromLTRB(6, 6, 6, 6),
+      padding: EdgeInsets.fromLTRB(6, 8, 8, 6),
       child: Card(
         color: Color.fromARGB(255, 246, 235, 244),
         elevation: 10,
