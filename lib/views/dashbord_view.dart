@@ -30,17 +30,17 @@ class DashbordView extends StatelessWidget {
         " ");
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 2, 59, 89),
+      backgroundColor: Color.fromARGB(255, 246, 235, 244),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Color.fromARGB(255, 2, 59, 89),
+        backgroundColor: Color.fromARGB(255, 246, 235, 244),
         elevation: 0.0,
         centerTitle: false,
         title: Text(
-          'Plans',
+          'My Plans',
           style: TextStyle(
-            color: Color.fromARGB(255, 246, 235, 244),
-            fontSize: 30,
+            color: Color.fromARGB(255, 2, 59, 89),
+            fontSize: 28,
           ),
         ),
       ),
@@ -81,7 +81,9 @@ class DashbordView extends StatelessWidget {
 
   Widget buildTripCard(BuildContext context, DocumentSnapshot trip) {
     return Container(
-      padding: EdgeInsets.fromLTRB(6, 8, 8, 6),
+      // trip.getLocationImage()
+
+      padding: EdgeInsets.fromLTRB(6, 8, 6, 8),
       child: Card(
         color: Color.fromARGB(255, 246, 235, 244),
         elevation: 10,
@@ -89,91 +91,105 @@ class DashbordView extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
         ),
         child: InkWell(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 16.0),
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 40.0, 0, 35.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: AutoSizeText(
-                          trip['title'],
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25.0,
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                colorFilter: new ColorFilter.mode(
+                    Colors.black.withOpacity(0.35), BlendMode.dstATop),
+                image: AssetImage("images/munnar.jpeg"),
+                fit: BoxFit.fill,
+                alignment: Alignment.topCenter,
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 16.0),
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 40.0, 0, 35.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: AutoSizeText(
+                            trip['title'],
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25.0,
+                              color: Color.fromARGB(255, 2, 59, 89),
+                            ),
+                            maxLines: 3,
+                          ),
+                        ),
+                        PopupMenuButton(
+                          color: Color.fromARGB(255, 246, 235, 244),
+                          icon: Icon(
+                            Icons.more_vert,
+                            size: 32,
                             color: Color.fromARGB(255, 2, 59, 89),
                           ),
-                          maxLines: 3,
-                        ),
-                      ),
-                      PopupMenuButton(
-                        color: Color.fromARGB(255, 246, 235, 244),
-                        icon: Icon(
-                          Icons.more_vert,
-                          size: 32,
-                          color: Color.fromARGB(255, 2, 59, 89),
-                        ),
-                        onSelected: (value) => deleteTrip(context, trip.id),
-                        itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-                          const PopupMenuItem(
-                            value: 1,
-                            child: ListTile(
-                              leading: Icon(
-                                Icons.cancel_rounded,
-                                color: Color.fromARGB(255, 2, 59, 89),
-                              ),
-                              title: Text(
-                                'Cancel Trip',
-                                style: TextStyle(
+                          onSelected: (value) => deleteTrip(context, trip.id),
+                          itemBuilder: (BuildContext context) =>
+                              <PopupMenuEntry>[
+                            const PopupMenuItem(
+                              value: 1,
+                              child: ListTile(
+                                leading: Icon(
+                                  Icons.cancel_rounded,
                                   color: Color.fromARGB(255, 2, 59, 89),
-                                  fontSize: 20,
+                                ),
+                                title: Text(
+                                  'Cancel Trip',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 2, 59, 89),
+                                    fontSize: 20,
+                                  ),
                                 ),
                               ),
                             ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 2.0, 0, 8.0),
+                    child: Row(
+                      children: [
+                        Text(
+                          "${DateFormat('MMMMd').format(trip['startDate'].toDate()).toString()} - ${DateFormat('MMMMd').format(trip['endDate'].toDate()).toString()}",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 2, 59, 89),
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 2.0, 0, 8.0),
-                  child: Row(
-                    children: [
-                      Text(
-                        "${DateFormat('MMMMd').format(trip['startDate'].toDate()).toString()} - ${DateFormat('MMMMd').format(trip['endDate'].toDate()).toString()}",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 2, 59, 89),
                         ),
-                      ),
-                      Spacer(),
-                    ],
+                        Spacer(),
+                      ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 8.0),
-                  child: Row(
-                    children: [
-                      Text(
-                        "INR ${trip['budget'].toStringAsFixed(2)}",
-                        style: TextStyle(
-                          fontSize: 22.0,
-                          color: Color.fromARGB(255, 2, 59, 89),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 8.0),
+                    child: Row(
+                      children: [
+                        Text(
+                          "INR ${trip['budget'].toStringAsFixed(2)}",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22.0,
+                            color: Color.fromARGB(255, 2, 59, 89),
+                          ),
                         ),
-                      ),
-                      Spacer(),
-                      Text(
-                        trip['travelType'],
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 2, 59, 89),
+                        Spacer(),
+                        Text(
+                          trip['travelType'],
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 2, 59, 89),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           onTap: () {

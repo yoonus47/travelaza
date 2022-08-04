@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text(
           "Travelaza",
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(fontSize: 23),
         ),
         centerTitle: false,
         automaticallyImplyLeading: false,
