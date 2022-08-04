@@ -8,7 +8,7 @@ class AppointmentEditor extends StatefulWidget {
 class AppointmentEditorState extends State<AppointmentEditor> {
   Widget _getAppointmentEditor(BuildContext context) {
     return Container(
-        color: Colors.white,
+        color: Color.fromARGB(255, 245, 245, 247),
         child: ListView(
           padding: const EdgeInsets.all(0),
           children: <Widget>[
@@ -28,7 +28,7 @@ class AppointmentEditorState extends State<AppointmentEditor> {
                     fontWeight: FontWeight.w400),
                 decoration: InputDecoration(
                   border: InputBorder.none,
-                  hintText: 'Add title',
+                  hintText: 'Place Name',
                 ),
               ),
             ),
@@ -259,7 +259,7 @@ class AppointmentEditorState extends State<AppointmentEditor> {
         home: Scaffold(
             appBar: AppBar(
               title: Text(getTile()),
-              backgroundColor: Colors.amber,
+              backgroundColor: Colors.pink,
               leading: IconButton(
                 icon: const Icon(
                   Icons.close,
@@ -335,6 +335,6 @@ class AppointmentEditorState extends State<AppointmentEditor> {
   }
 
   String getTile() {
-    return _subject.isEmpty ? 'New event' : 'Event details';
+    return _subject.isEmpty ? 'Add Place' : 'Event details';
   }
 }
