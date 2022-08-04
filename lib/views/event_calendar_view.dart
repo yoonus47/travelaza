@@ -19,9 +19,7 @@ class EventCalendar extends StatefulWidget {
   EventCalendarState createState() => EventCalendarState();
 }
 
-List<Color> _colorCollection = <Color>[];
-List<String> _colorNames = <String>[];
-int _selectedColorIndex = 0;
+List<Color> _colorCollection = <Color>[const Color(0xFF1A395A)];
 int _selectedTimeZoneIndex = 0;
 List<String> _timeZoneCollection = <String>[];
 late DataSource _events;
@@ -47,7 +45,6 @@ class EventCalendarState extends State<EventCalendar> {
     appointments = getMeetingDetails();
     _events = DataSource(appointments);
     _selectedAppointment = null;
-    _selectedColorIndex = 0;
     _selectedTimeZoneIndex = 0;
     _subject = '';
     _notes = '';
@@ -94,26 +91,6 @@ class EventCalendarState extends State<EventCalendar> {
             minimumAppointmentDuration: const Duration(minutes: 60)));
   }
 
-  void onCalendarViewChange(String value) {
-    if (value == 'Day') {
-      _calendarView = CalendarView.day;
-    } else if (value == 'Week') {
-      _calendarView = CalendarView.week;
-    } else if (value == 'Work week') {
-      _calendarView = CalendarView.workWeek;
-    } else if (value == 'Month') {
-      _calendarView = CalendarView.month;
-    } else if (value == 'Timeline day') {
-      _calendarView = CalendarView.timelineDay;
-    } else if (value == 'Timeline week') {
-      _calendarView = CalendarView.timelineWeek;
-    } else if (value == 'Timeline work week') {
-      _calendarView = CalendarView.timelineWorkWeek;
-    }
-
-    setState(() {});
-  }
-
   void onCalendarTapped(CalendarTapDetails calendarTapDetails) {
     if (calendarTapDetails.targetElement != CalendarElement.calendarCell &&
         calendarTapDetails.targetElement != CalendarElement.appointment) {
@@ -123,7 +100,6 @@ class EventCalendarState extends State<EventCalendar> {
     setState(() {
       _selectedAppointment = null;
       _isAllDay = false;
-      _selectedColorIndex = 0;
       _selectedTimeZoneIndex = 0;
       _subject = '';
       _notes = '';
@@ -136,8 +112,6 @@ class EventCalendarState extends State<EventCalendar> {
           _startDate = meetingDetails.from;
           _endDate = meetingDetails.to;
           _isAllDay = meetingDetails.isAllDay;
-          _selectedColorIndex =
-              _colorCollection.indexOf(meetingDetails.background);
           _selectedTimeZoneIndex = meetingDetails.startTimeZone == ''
               ? 0
               : _timeZoneCollection.indexOf(meetingDetails.startTimeZone);
@@ -167,14 +141,6 @@ class EventCalendarState extends State<EventCalendar> {
     final List<Meeting> meetingCollection = <Meeting>[];
     eventNameCollection = <String>[];
 
-    _colorCollection = <Color>[];
-    _colorCollection.add(const Color(0xFF85461E));
-    _colorCollection.add(const Color(0xFFFF00FF));
-
-    _colorNames = <String>[];
-    _colorNames.add('Caramel');
-    _colorNames.add('Magenta');
-
     _timeZoneCollection = <String>[];
     _timeZoneCollection.add('Default Time');
     _timeZoneCollection.add('AUS Central Standard Time');
@@ -182,20 +148,19 @@ class EventCalendarState extends State<EventCalendar> {
     final DateTime today = DateTime.now();
     for (int month = -1; month < 2; month++) {
       for (int day = -5; day < 5; day++) {
-        for (int hour = 9; hour < 18; hour += 5) {
+        for (int hour = 0; hour < 6; hour += 18) {
           meetingCollection.add(Meeting(
             from: today
                 .add(Duration(days: (month * 30) + day))
                 .add(Duration(hours: hour)),
             to: today
                 .add(Duration(days: (month * 30) + day))
-                .add(Duration(hours: hour + 2)),
-            background: Color(0xFFFF00FF),
+                .add(Duration(hours: hour + 6)),
             startTimeZone: '',
             endTimeZone: '',
             description: '',
             isAllDay: false,
-            eventName: 'General Meeting',
+            eventName: 'Sleep',
           ));
         }
       }
@@ -239,7 +204,7 @@ class Meeting {
   Meeting(
       {required this.from,
       required this.to,
-      this.background = Colors.green,
+      this.background = const Color(0xFF1A395A),
       this.isAllDay = false,
       this.eventName = '',
       this.startTimeZone = '',

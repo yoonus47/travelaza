@@ -287,7 +287,6 @@ class AppointmentEditorState extends State<AppointmentEditor> {
                       meetings.add(Meeting(
                         from: _startDate,
                         to: _endDate,
-                        background: _colorCollection[_selectedColorIndex],
                         startTimeZone: _selectedTimeZoneIndex == 0
                             ? ''
                             : _timeZoneCollection[_selectedTimeZoneIndex],
