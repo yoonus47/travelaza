@@ -46,6 +46,7 @@ dependencies:
   date_picker_timeline: ^1.2.3
   table_calendar: ^3.0.6
   shared_preferences: ^2.0.15
+  syncfusion_flutter_calendar: ^20.2.40
 
 dev_dependencies:
   flutter_test:
