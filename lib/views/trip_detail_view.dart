@@ -41,7 +41,7 @@ class TripDetailView extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 35.0,
                                   color: Color.fromARGB(255, 2, 59, 89),
-                                  fontWeight: FontWeight.w600)),
+                                  fontWeight: FontWeight.w500)),
                         ),
                       ),
                     ),
@@ -96,7 +96,7 @@ class TripDetailView extends StatelessWidget {
                             child: Text(
                               'Days',
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w600),
+                                  fontSize: 20, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
@@ -125,7 +125,7 @@ class TripDetailView extends StatelessWidget {
                             child: Text(
                               'Budget',
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w600),
+                                  fontSize: 20, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
@@ -165,11 +165,11 @@ class TripDetailView extends StatelessWidget {
                           alignment: AlignmentDirectional(-1, 0),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 10, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(5, 10, 0, 0),
                             child: Text(
                               'Mode Of Travel',
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w600),
+                                  fontSize: 19, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
@@ -209,7 +209,7 @@ class TripDetailView extends StatelessWidget {
                             child: Text(
                               'Dates',
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w600),
+                                  fontSize: 20, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
@@ -266,7 +266,7 @@ class TripDetailView extends StatelessWidget {
                             child: Text(
                               'Trip',
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w600),
+                                  fontSize: 20, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
@@ -309,7 +309,7 @@ class TripDetailView extends StatelessWidget {
                             child: Text(
                               'People',
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w600),
+                                  fontSize: 20, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
