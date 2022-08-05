@@ -28,7 +28,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: "Travelaza",
-        theme: ThemeData(primarySwatch: Colors.pink),
+        theme: ThemeData(
+          primarySwatch: Colors.pink,
+          fontFamily: 'Raleway',
+        ),
         initialRoute: '/',
         routes: <String, WidgetBuilder>{
           '/': (context) => Wrapper(),

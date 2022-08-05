@@ -1,10 +1,7 @@
 library event_calendar;
 
 import 'package:flutter/material.dart';
-import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:intl/intl.dart';
-import 'package:table_calendar/table_calendar.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:travelaza/home_widget.dart';
 
@@ -19,9 +16,6 @@ class EventCalendar extends StatefulWidget {
   EventCalendarState createState() => EventCalendarState();
 }
 
-List<Color> _colorCollection = <Color>[const Color(0xFF1A395A)];
-int _selectedTimeZoneIndex = 0;
-List<String> _timeZoneCollection = <String>[];
 late DataSource _events;
 Meeting? _selectedAppointment;
 late DateTime _startDate;
@@ -45,7 +39,6 @@ class EventCalendarState extends State<EventCalendar> {
     appointments = getMeetingDetails();
     _events = DataSource(appointments);
     _selectedAppointment = null;
-    _selectedTimeZoneIndex = 0;
     _subject = '';
     _notes = '';
     super.initState();
@@ -63,10 +56,22 @@ class EventCalendarState extends State<EventCalendar> {
             icon: new Icon(Icons.arrow_back),
           ),
         ),
-        resizeToAvoidBottomInset: false,
-        body: Padding(
-            padding: const EdgeInsets.fromLTRB(5, 0, 5, 5),
-            child: getEventCalendar(_calendarView, _events, onCalendarTapped)));
+        body: Column(
+          children: [
+            Expanded(
+              child: getEventCalendar(_calendarView, _events, onCalendarTapped),
+            ),
+            Container(
+              // color: Colors.blue,
+              width: double.infinity,
+              padding: const EdgeInsets.fromLTRB(20, 10, 5, 20),
+              child: Text(
+                'Day Remaining Budget',
+                style: TextStyle(fontSize: 20),
+              ),
+            )
+          ],
+        ));
   }
 
   SfCalendar getEventCalendar(
@@ -76,6 +81,8 @@ class EventCalendarState extends State<EventCalendar> {
     return SfCalendar(
         view: CalendarView.day,
         dataSource: _calendarDataSource,
+        // allowDragAndDrop: true,
+        // allowAppointmentResize: true,
         showNavigationArrow: true,
         showDatePickerButton: true,
         onTap: calendarTapCallback,
@@ -100,7 +107,6 @@ class EventCalendarState extends State<EventCalendar> {
     setState(() {
       _selectedAppointment = null;
       _isAllDay = false;
-      _selectedTimeZoneIndex = 0;
       _subject = '';
       _notes = '';
       if (_calendarView == CalendarView.month) {
@@ -112,9 +118,6 @@ class EventCalendarState extends State<EventCalendar> {
           _startDate = meetingDetails.from;
           _endDate = meetingDetails.to;
           _isAllDay = meetingDetails.isAllDay;
-          _selectedTimeZoneIndex = meetingDetails.startTimeZone == ''
-              ? 0
-              : _timeZoneCollection.indexOf(meetingDetails.startTimeZone);
           _subject = meetingDetails.eventName == '(No title)'
               ? ''
               : meetingDetails.eventName;
@@ -141,10 +144,6 @@ class EventCalendarState extends State<EventCalendar> {
     final List<Meeting> meetingCollection = <Meeting>[];
     eventNameCollection = <String>[];
 
-    _timeZoneCollection = <String>[];
-    _timeZoneCollection.add('Default Time');
-    _timeZoneCollection.add('AUS Central Standard Time');
-
     final DateTime today = DateTime.now();
     for (int month = -1; month < 2; month++) {
       for (int day = -5; day < 5; day++) {
@@ -156,8 +155,6 @@ class EventCalendarState extends State<EventCalendar> {
             to: today
                 .add(Duration(days: (month * 30) + day))
                 .add(Duration(hours: hour + 6)),
-            startTimeZone: '',
-            endTimeZone: '',
             description: '',
             isAllDay: false,
             eventName: 'Sleep',
@@ -182,13 +179,7 @@ class DataSource extends CalendarDataSource {
   String getSubject(int index) => appointments![index].eventName;
 
   @override
-  String getStartTimeZone(int index) => appointments![index].startTimeZone;
-
-  @override
   String getNotes(int index) => appointments![index].description;
-
-  @override
-  String getEndTimeZone(int index) => appointments![index].endTimeZone;
 
   @override
   Color getColor(int index) => appointments![index].background;
@@ -207,8 +198,6 @@ class Meeting {
       this.background = const Color(0xFF1A395A),
       this.isAllDay = false,
       this.eventName = '',
-      this.startTimeZone = '',
-      this.endTimeZone = '',
       this.description = ''});
 
   final String eventName;
@@ -216,7 +205,5 @@ class Meeting {
   final DateTime to;
   final Color background;
   final bool isAllDay;
-  final String startTimeZone;
-  final String endTimeZone;
   final String description;
 }

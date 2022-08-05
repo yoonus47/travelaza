@@ -240,7 +240,34 @@ class AppointmentEditorState extends State<AppointmentEditor> {
                     fontWeight: FontWeight.w400),
                 decoration: InputDecoration(
                   border: InputBorder.none,
-                  hintText: 'Add description',
+                  hintText: 'Add Description',
+                ),
+              ),
+            ),
+            const Divider(
+              height: 1.0,
+              thickness: 1,
+            ),
+            ListTile(
+              contentPadding: const EdgeInsets.all(5),
+              leading: Icon(
+                Icons.currency_rupee_rounded,
+                color: Colors.black87,
+              ),
+              title: TextField(
+                // controller: TextEditingController(text: _notes),
+                // onChanged: (String value) {
+                //   _notes = value;
+                // },
+                keyboardType: TextInputType.numberWithOptions(decimal: false),
+                maxLines: null,
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w400),
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Estimated Budget',
                 ),
               ),
             ),
@@ -287,12 +314,6 @@ class AppointmentEditorState extends State<AppointmentEditor> {
                       meetings.add(Meeting(
                         from: _startDate,
                         to: _endDate,
-                        startTimeZone: _selectedTimeZoneIndex == 0
-                            ? ''
-                            : _timeZoneCollection[_selectedTimeZoneIndex],
-                        endTimeZone: _selectedTimeZoneIndex == 0
-                            ? ''
-                            : _timeZoneCollection[_selectedTimeZoneIndex],
                         description: _notes,
                         isAllDay: _isAllDay,
                         eventName: _subject == '' ? '(No title)' : _subject,
