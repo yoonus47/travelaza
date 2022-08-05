@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:travelaza/home_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:travelaza/models/Trip.dart';
 
@@ -65,9 +66,18 @@ class EventCalendarState extends State<EventCalendar> {
               // color: Colors.blue,
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(20, 10, 5, 20),
-              child: Text(
-                'Day Remaining Budget',
-                style: TextStyle(fontSize: 20),
+              child: Row(
+                children: [
+                  Text(
+                    'Day Remaining Budget  ',
+                    style: GoogleFonts.lato(fontSize: 20),
+                  ),
+                  Text(
+                    '${widget.trip.budget}',
+                    style: GoogleFonts.lato(
+                        fontSize: 21, fontWeight: FontWeight.w800),
+                  ),
+                ],
               ),
             )
           ],
@@ -143,25 +153,6 @@ class EventCalendarState extends State<EventCalendar> {
   List<Meeting> getMeetingDetails() {
     final List<Meeting> meetingCollection = <Meeting>[];
     eventNameCollection = <String>[];
-
-    final DateTime today = DateTime.now();
-    for (int month = -1; month < 2; month++) {
-      for (int day = -5; day < 5; day++) {
-        for (int hour = 0; hour < 6; hour += 18) {
-          meetingCollection.add(Meeting(
-            from: today
-                .add(Duration(days: (month * 30) + day))
-                .add(Duration(hours: hour)),
-            to: today
-                .add(Duration(days: (month * 30) + day))
-                .add(Duration(hours: hour + 6)),
-            description: '',
-            isAllDay: false,
-            eventName: 'Sleep',
-          ));
-        }
-      }
-    }
 
     return meetingCollection;
   }
