@@ -5,7 +5,6 @@ import 'package:travelaza/views/indev.dart';
 
 import 'home_widget.dart';
 import 'package:travelaza/services/auth_service.dart';
-import 'package:travelaza/views/first_view.dart';
 import 'package:travelaza/widgets/wrapper.dart';
 
 import 'package:travelaza/views/signup_view.dart';
