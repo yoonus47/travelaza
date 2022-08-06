@@ -4,6 +4,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/models/Trip.dart';
 import 'package:travelaza/views/event_calendar_view.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 class TripDetailView extends StatelessWidget {
   final Trip trip;
 
@@ -137,10 +139,10 @@ class TripDetailView extends StatelessWidget {
                             child: AutoSizeText(
                               "INR ${(tripDays * trip.budget).toString()}",
                               maxLines: 3,
-                              style: TextStyle(
+                              style: GoogleFonts.lato(
                                   color: Color.fromARGB(255, 185, 51, 105),
                                   fontSize: 32,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w700),
                             ),
                           ),
                         ),
@@ -217,13 +219,13 @@ class TripDetailView extends StatelessWidget {
                           alignment: AlignmentDirectional(-1, 0),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(18, 10, 0, 0),
                             child: Text(
                               "${DateFormat('dd/MM').format(trip.startDate).toString()} - ${DateFormat('dd/MM').format(trip.endDate).toString()}",
-                              style: TextStyle(
+                              style: GoogleFonts.lato(
                                   color: Color.fromARGB(255, 185, 51, 105),
                                   fontSize: 34,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w600),
                             ),
                           ),
                         ),

@@ -73,7 +73,7 @@ class EventCalendarState extends State<EventCalendar> {
                     style: GoogleFonts.lato(fontSize: 20),
                   ),
                   Text(
-                    '${widget.trip.budget}',
+                    '${widget.trip.budget} INR',
                     style: GoogleFonts.lato(
                         fontSize: 21, fontWeight: FontWeight.w800),
                   ),

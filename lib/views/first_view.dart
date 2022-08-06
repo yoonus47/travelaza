@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/widgets/custom_dialog.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 class FirstView extends StatelessWidget {
   final primaryColor = const Color(0xFF1A395A);
 
@@ -23,10 +25,10 @@ class FirstView extends StatelessWidget {
                 SizedBox(height: _height * 0.10),
                 Text(
                   "Welcome",
-                  style: TextStyle(
-                    fontSize: 44,
-                    color: Color(0xFFF9DF90),
-                  ),
+                  style: GoogleFonts.lato(
+                      fontSize: 44,
+                      color: Color(0xFFF9DF90),
+                      fontWeight: FontWeight.w700),
                 ),
                 SizedBox(height: _height * 0.10),
                 AutoSizeText(
@@ -48,11 +50,10 @@ class FirstView extends StatelessWidget {
                         top: 10.0, bottom: 10.0, left: 30.0, right: 30.0),
                     child: Text(
                       "Get Started",
-                      style: TextStyle(
-                        color: primaryColor,
-                        fontSize: 28,
-                        fontWeight: FontWeight.w300,
-                      ),
+                      style: GoogleFonts.lato(
+                          color: primaryColor,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
                   onPressed: () {
@@ -74,7 +75,10 @@ class FirstView extends StatelessWidget {
                 FlatButton(
                   child: Text(
                     "Sign In",
-                    style: TextStyle(color: Color(0xFFF9DF90), fontSize: 25),
+                    style: GoogleFonts.lato(
+                        color: Color(0xFFF9DF90),
+                        fontSize: 28,
+                        fontWeight: FontWeight.w700),
                   ),
                   onPressed: () {
                     Navigator.of(context).pushNamed('/login');
