@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         title: "Travelaza",
         theme: ThemeData(
             primarySwatch: Colors.pink,
-            fontFamily: 'Raleway',
+            fontFamily: 'FFMark',
             bottomAppBarColor: Colors.transparent),
         initialRoute: '/',
         routes: <String, WidgetBuilder>{

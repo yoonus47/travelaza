@@ -93,6 +93,9 @@ flutter:
     - family: Raleway
       fonts:
         - asset: fonts/Raleway-Bold.ttf
+    - family: FFMark
+      fonts:
+        - asset: fonts/FF_Mark_Pro_Bold.otf
         # - asset: fonts/Schyler-Italic.ttf
         #   style: italic
   #   - family: Trajan Pro

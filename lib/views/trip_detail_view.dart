@@ -139,7 +139,7 @@ class TripDetailView extends StatelessWidget {
                             child: AutoSizeText(
                               "INR ${(tripDays * trip.budget).toString()}",
                               maxLines: 3,
-                              style: GoogleFonts.lato(
+                              style: TextStyle(
                                   color: Color.fromARGB(255, 185, 51, 105),
                                   fontSize: 32,
                                   fontWeight: FontWeight.w700),
@@ -222,7 +222,7 @@ class TripDetailView extends StatelessWidget {
                                 EdgeInsetsDirectional.fromSTEB(18, 10, 0, 0),
                             child: Text(
                               "${DateFormat('dd/MM').format(trip.startDate).toString()} - ${DateFormat('dd/MM').format(trip.endDate).toString()}",
-                              style: GoogleFonts.lato(
+                              style: TextStyle(
                                   color: Color.fromARGB(255, 185, 51, 105),
                                   fontSize: 34,
                                   fontWeight: FontWeight.w600),
