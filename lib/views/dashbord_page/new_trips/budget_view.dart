@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travelaza/models/Trip.dart';
 import 'package:flutter/services.dart';
 
-import 'package:travelaza/views/new_trips/summary_view.dart';
+import 'package:travelaza/views/dashbord_page/new_trips/summary_view.dart';
 import 'package:travelaza/widgets/divider_with_text.dart';
 
 enum budgetType { simple, complex }

@@ -3,7 +3,7 @@ import 'package:travelaza/services/auth_service.dart';
 import 'package:provider/provider.dart';
 
 import 'package:travelaza/models/user_model.dart';
-import 'package:travelaza/views/login_view.dart';
+import 'package:travelaza/views/auth_page/login_view.dart';
 import 'package:travelaza/home_widget.dart';
 import 'package:travelaza/views/first_view.dart';
 

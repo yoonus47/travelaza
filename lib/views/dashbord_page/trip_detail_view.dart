@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/models/Trip.dart';
-import 'package:travelaza/views/event_calendar_view.dart';
+import 'package:travelaza/views/dashbord_page/event_calendar_view.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 

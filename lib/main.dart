@@ -7,8 +7,8 @@ import 'home_widget.dart';
 import 'package:travelaza/services/auth_service.dart';
 import 'package:travelaza/widgets/wrapper.dart';
 
-import 'package:travelaza/views/signup_view.dart';
-import 'package:travelaza/views/login_view.dart';
+import 'package:travelaza/views/auth_page/signup_view.dart';
+import 'package:travelaza/views/auth_page/login_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

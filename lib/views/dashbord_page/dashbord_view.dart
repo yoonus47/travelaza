@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:travelaza/views/trip_detail_view.dart';
+import 'package:travelaza/views/dashbord_page/trip_detail_view.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'new_trips/location_view.dart';
