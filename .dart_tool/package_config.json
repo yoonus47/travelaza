@@ -135,13 +135,13 @@
     },
     {
       "name": "firebase_core_platform_interface",
-      "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.4.3",
+      "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
     {
       "name": "firebase_core_web",
-      "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.6.6",
+      "rootUri": "file:///Users/yoonus/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.7.1",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -422,7 +422,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-08-07T18:21:09.759564Z",
+  "generated": "2022-08-08T11:04:29.606951Z",
   "generator": "pub",
   "generatorVersion": "2.17.6"
 }
