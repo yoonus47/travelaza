@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travelaza/views/dashbord_view.dart';
-import 'package:travelaza/views/discover_view.dart';
-import 'package:travelaza/views/articles_view.dart';
+import 'package:travelaza/views/dashbord_page/dashbord_view.dart';
+import 'package:travelaza/views/discover_page/discover_view.dart';
+import 'package:travelaza/views/articles_page/articles_view.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:travelaza/services/auth_service.dart';

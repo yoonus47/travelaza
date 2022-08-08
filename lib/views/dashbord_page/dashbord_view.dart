@@ -60,8 +60,10 @@ class DashbordView extends StatelessWidget {
                     buildTripCard(context, snapshot.data!.docs[index]));
           }),
       floatingActionButton: FloatingActionButton(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(20.0))),
           child: Icon(Icons.add),
-          backgroundColor: Color.fromARGB(255, 111, 10, 10),
+          backgroundColor: Color(0xFF1A395A),
           onPressed: () {
             Navigator.push(
               context,
