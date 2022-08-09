@@ -13,9 +13,9 @@ class DiscoverView extends StatelessWidget {
         title: Text(
           'Discover',
           style: TextStyle(
-            color: Color.fromARGB(255, 2, 59, 89),
-            fontSize: 28,
-          ),
+              color: Color.fromARGB(255, 2, 59, 89),
+              fontSize: 28,
+              fontWeight: FontWeight.w600),
         ),
       ),
     );

@@ -167,13 +167,6 @@ class CustomDialog extends StatelessWidget {
                       print(e);
                     }
                   },
-                  // onPressed: () async {
-                  //   try {
-                  //     await authService.signOut();
-                  //   } catch (e) {
-                  //     print(e);
-                  //   }
-                  // },
                 ),
                 SizedBox(height: 10.0),
                 showSecondaryButton(context),

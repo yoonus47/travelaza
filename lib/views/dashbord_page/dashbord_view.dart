@@ -38,9 +38,9 @@ class DashbordView extends StatelessWidget {
         title: Text(
           'My Plans',
           style: TextStyle(
-            color: Color.fromARGB(255, 2, 59, 89),
-            fontSize: 28,
-          ),
+              color: Color.fromARGB(255, 2, 59, 89),
+              fontSize: 28,
+              fontWeight: FontWeight.w600),
         ),
       ),
       body: StreamBuilder<QuerySnapshot>(
