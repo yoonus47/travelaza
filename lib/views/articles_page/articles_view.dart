@@ -27,7 +27,7 @@ class ArticlesView extends StatelessWidget {
           onPressed: () {}),
       body: Container(
         // trip.getLocationImage()
-        height: 300,
+        height: 350,
         padding: EdgeInsets.fromLTRB(6, 8, 6, 8),
         child: Card(
           color: Color.fromARGB(255, 246, 235, 244),
@@ -37,20 +37,20 @@ class ArticlesView extends StatelessWidget {
           ),
           child: InkWell(
             child: Container(
-              color: Color.fromARGB(255, 76, 191, 166),
+              color: Color.fromARGB(255, 234, 232, 236),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 16.0),
                 child: Column(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 40.0, 0, 35.0),
+                      padding: const EdgeInsets.fromLTRB(0, 40.0, 0, 10.0),
                       child: Row(
                         children: [
                           Expanded(
                             child: AutoSizeText(
                               'My Dubai Experience',
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w600,
                                 fontSize: 25.0,
                                 color: Color.fromARGB(255, 2, 59, 89),
                               ),
@@ -61,20 +61,39 @@ class ArticlesView extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 8.0),
+                      padding: const EdgeInsets.fromLTRB(0, 5.0, 0, 15.0),
                       child: Row(
                         children: [
                           Text(
                             "John Lewis",
+                            textAlign: TextAlign.right,
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w500,
                               fontSize: 22.0,
                               color: Color.fromARGB(255, 2, 59, 89),
                             ),
                           ),
                         ],
                       ),
-                    )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 10.0, 0, 5.0),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: AutoSizeText(
+                              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard ...',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w200,
+                                fontSize: 20.0,
+                                color: Color.fromARGB(255, 2, 59, 89),
+                              ),
+                              maxLines: 4,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
