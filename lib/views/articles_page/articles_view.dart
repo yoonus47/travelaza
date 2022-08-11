@@ -21,11 +21,17 @@ class ArticlesView extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20.0))),
-          child: Icon(Icons.add),
-          backgroundColor: Color(0xFF1A395A),
-          onPressed: () {}),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(20.0))),
+        child: Icon(Icons.add),
+        backgroundColor: Color(0xFF1A395A),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => InDev()),
+          );
+        },
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -170,7 +176,7 @@ class ArticlesView extends StatelessWidget {
                               children: [
                                 Expanded(
                                   child: AutoSizeText(
-                                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s ...',
+                                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been since the 1500s ...',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w200,
                                       fontSize: 20.0,

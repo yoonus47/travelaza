@@ -6,6 +6,7 @@ class InDev extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFF1A395A),
       appBar: AppBar(
+        title: Text('Back'),
         automaticallyImplyLeading: false,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
