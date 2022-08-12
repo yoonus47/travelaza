@@ -18,6 +18,17 @@ class DiscoverView extends StatelessWidget {
               fontWeight: FontWeight.w600),
         ),
       ),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(17, 12, 6, 12),
+        child: Text(
+          'This page is under developement',
+          style: TextStyle(
+            color: Color.fromARGB(255, 2, 59, 89),
+            fontSize: 30,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+      ),
     );
   }
 }

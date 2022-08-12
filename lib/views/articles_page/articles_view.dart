@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/views/indev.dart';
 
+import 'package:travelaza/views/articles_page/add_articles_view.dart';
+
 class ArticlesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -112,7 +114,8 @@ class ArticlesView extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => InDev()),
+                      MaterialPageRoute(
+                          builder: (context) => AddArticlesView()),
                     );
                   },
                 ),
