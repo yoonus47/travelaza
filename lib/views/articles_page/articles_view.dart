@@ -6,7 +6,6 @@ import 'package:travelaza/views/indev.dart';
 
 import 'package:travelaza/views/articles_page/add_articles_view.dart';
 import 'package:travelaza/widgets/loading_cube.dart';
-import 'package:travelaza/models/Article.dart';
 
 class ArticlesView extends StatelessWidget {
   Widget _cardUI(BuildContext context, DocumentSnapshot article) {
@@ -15,7 +14,7 @@ class ArticlesView extends StatelessWidget {
       margin: EdgeInsets.all(16),
       elevation: 10,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(7),
+        borderRadius: BorderRadius.circular(9),
       ),
       child: InkWell(
         onTap: () {
@@ -30,7 +29,8 @@ class ArticlesView extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(7), topRight: Radius.circular(7)),
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10)),
                 child: Image.network(
                   article['imageUrl'],
                   width: double.infinity,
@@ -78,19 +78,45 @@ class ArticlesView extends StatelessWidget {
                   article['description'],
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 16,
+                      fontSize: 17,
                       fontWeight: FontWeight.w200),
                 ),
               ),
               SizedBox(height: 5),
               Padding(
-                padding: const EdgeInsets.fromLTRB(14.0, 7, 14.0, 7),
-                child: Text(
-                  'KK Rogan',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600),
+                padding: const EdgeInsets.fromLTRB(14.0, 20, 14.0, 7),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      child: CircleAvatar(
+                        radius: 19,
+                        backgroundImage: NetworkImage(
+                            'https://cdn.pixabay.com/photo/2015/03/03/20/42/man-657869_1280.jpg'), //image url
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
+                      child: Column(
+                        children: [
+                          Text(
+                            'KK Rogan',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          Text(
+                            article['date'],
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

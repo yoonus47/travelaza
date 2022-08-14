@@ -30,6 +30,8 @@ class _AddArticlesViewState extends State<AddArticlesView> {
   // Implementing the image picker
   Future<void> _openImagePicker() async {
     final XFile? pickedImage = await _picker.pickImage(
+      maxHeight: 600,
+      maxWidth: 900,
       source: ImageSource.gallery,
     );
     if (pickedImage != null) {
