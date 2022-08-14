@@ -44,6 +44,8 @@ class _AddArticlesViewState extends State<AddArticlesView> {
       Fluttertoast.showToast(msg: 'Please Add the Image and the Description');
     } else if (_image == null) {
       Fluttertoast.showToast(msg: 'Please Add the Image');
+    } else if (_titleEditingControlller.text.isEmpty) {
+      Fluttertoast.showToast(msg: 'Please Add the Title');
     } else if (_descriptionEditingControlller.text.isEmpty) {
       Fluttertoast.showToast(msg: 'Please Add the Description');
     } else {
@@ -85,6 +87,7 @@ class _AddArticlesViewState extends State<AddArticlesView> {
 
     FirebaseFirestore.instance.collection('articles').add({
       'imageUrl': imageUrl,
+      'title': _titleEditingControlller.text,
       'description': _descriptionEditingControlller.text,
       'date': date,
       'time': time,

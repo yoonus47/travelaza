@@ -65,7 +65,7 @@ class ArticlesView extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(14.0, 7, 14.0, 7),
                 child: Text(
-                  article['description'],
+                  article['title'],
                   style: TextStyle(
                       color: Color.fromARGB(255, 2, 59, 89),
                       fontSize: 27,
@@ -75,7 +75,7 @@ class ArticlesView extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(14.0, 7, 14.0, 7),
                 child: Text(
-                  'Prototype and test end-to-end with the Local Emulator Suite, now with Firebase Authentication',
+                  article['description'],
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 16,

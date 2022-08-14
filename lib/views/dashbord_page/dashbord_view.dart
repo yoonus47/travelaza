@@ -201,7 +201,6 @@ class DashbordView extends StatelessWidget {
             ),
           ),
           onTap: () {
-            print(trip.id);
             Navigator.push(
               context,
               MaterialPageRoute(
