@@ -18,6 +18,8 @@ class AddArticlesView extends StatefulWidget {
 }
 
 class _AddArticlesViewState extends State<AddArticlesView> {
+  final TextEditingController _titleEditingControlller =
+      TextEditingController();
   final TextEditingController _descriptionEditingControlller =
       TextEditingController();
 
@@ -149,6 +151,12 @@ class _AddArticlesViewState extends State<AddArticlesView> {
                   ),
             SizedBox(height: 16),
             TextField(
+              controller: _titleEditingControlller,
+              keyboardType: TextInputType.text,
+              decoration: (InputDecoration(labelText: 'Title')),
+            ),
+            SizedBox(height: 16),
+            TextField(
               controller: _descriptionEditingControlller,
               keyboardType: TextInputType.text,
               decoration: (InputDecoration(labelText: 'Description')),
@@ -164,7 +172,7 @@ class _AddArticlesViewState extends State<AddArticlesView> {
                       height: 50,
                       child: Center(
                           child: Text(
-                        'Add New Post',
+                        'Post Article',
                         style: TextStyle(fontSize: 18, color: Colors.white),
                       )),
                     ),
