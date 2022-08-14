@@ -85,7 +85,7 @@ class _AddArticlesViewState extends State<AddArticlesView> {
       'imageUrl': imageUrl,
       'description': _descriptionEditingControlller.text,
       'date': date,
-      'timr': time,
+      'time': time,
     }).whenComplete(() {
       setState(() {
         _loading = false;

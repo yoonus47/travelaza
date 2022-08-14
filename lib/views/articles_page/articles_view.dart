@@ -14,42 +14,57 @@ class ArticlesView extends StatelessWidget {
       color: Color.fromARGB(255, 246, 235, 244),
       margin: EdgeInsets.all(16),
       elevation: 10,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(7),
+      ),
       child: Container(
-        padding: EdgeInsets.all(14),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  article['date'],
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontStyle: FontStyle.italic),
-                ),
-                Text(
-                  article['date'],
-                  style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontStyle: FontStyle.italic),
-                ),
-              ],
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(7), topRight: Radius.circular(7)),
+              child: Image.network(
+                article['imageUrl'],
+                width: double.infinity,
+                height: 200,
+                fit: BoxFit.fill,
+              ),
             ),
             SizedBox(height: 10),
-            Image.network(
-              article['imageUrl'],
-              width: double.infinity,
-              height: 300,
-              fit: BoxFit.cover,
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    article['date'],
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 16,
+                        fontStyle: FontStyle.italic),
+                  ),
+                  Text(
+                    article['time'],
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 16,
+                        fontStyle: FontStyle.italic),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 10),
-            Text(
-              article['description'],
-              style: TextStyle(color: Colors.black, fontSize: 20),
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Text(
+                article['description'],
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 27,
+                    fontWeight: FontWeight.w600),
+              ),
             )
           ],
         ),
