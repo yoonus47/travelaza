@@ -124,65 +124,69 @@ class _AddArticlesViewState extends State<AddArticlesView> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(14.0),
-        child: Column(
-          children: [
-            _image == null
-                ? Container(
-                    width: double.infinity,
-                    height: 250,
-                    color: Colors.grey,
-                    child: Center(
-                      child: RaisedButton(
-                          onPressed: () {
-                            _openImagePicker();
-                          },
-                          color: Colors.pink,
-                          child: Text(
-                            'Choose Image',
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          )),
-                    ))
-                : GestureDetector(
-                    onTap: () {
-                      _openImagePicker();
-                    },
-                    child: Container(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _image == null
+                  ? Container(
                       width: double.infinity,
                       height: 250,
-                      child: _image != null
-                          ? Image.file(_image!, fit: BoxFit.cover)
-                          : const Text('Please select an image'),
-                    ),
-                  ),
-            SizedBox(height: 16),
-            TextField(
-              controller: _titleEditingControlller,
-              keyboardType: TextInputType.text,
-              decoration: (InputDecoration(labelText: 'Title')),
-            ),
-            SizedBox(height: 16),
-            TextField(
-              controller: _descriptionEditingControlller,
-              keyboardType: TextInputType.text,
-              decoration: (InputDecoration(labelText: 'Description')),
-            ),
-            SizedBox(height: 40),
-            _loading
-                ? loadingScreen()
-                : GestureDetector(
-                    onTap: _validate,
-                    child: Container(
-                      color: Colors.pink,
-                      width: double.infinity,
-                      height: 50,
+                      color: Colors.grey,
                       child: Center(
-                          child: Text(
-                        'Post Article',
-                        style: TextStyle(fontSize: 18, color: Colors.white),
-                      )),
+                        child: RaisedButton(
+                            onPressed: () {
+                              _openImagePicker();
+                            },
+                            color: Colors.pink,
+                            child: Text(
+                              'Choose Image',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white),
+                            )),
+                      ))
+                  : GestureDetector(
+                      onTap: () {
+                        _openImagePicker();
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 250,
+                        child: _image != null
+                            ? Image.file(_image!, fit: BoxFit.cover)
+                            : const Text('Please select an image'),
+                      ),
                     ),
-                  )
-          ],
+              SizedBox(height: 16),
+              TextField(
+                controller: _titleEditingControlller,
+                keyboardType: TextInputType.text,
+                decoration: (InputDecoration(labelText: 'Title')),
+              ),
+              SizedBox(height: 16),
+              TextField(
+                controller: _descriptionEditingControlller,
+                keyboardType: TextInputType.text,
+                decoration: (InputDecoration(labelText: 'Description')),
+                maxLines: null,
+              ),
+              SizedBox(height: 40),
+              _loading
+                  ? loadingScreen()
+                  : GestureDetector(
+                      onTap: _validate,
+                      child: Container(
+                        color: Colors.pink,
+                        width: double.infinity,
+                        height: 50,
+                        child: Center(
+                            child: Text(
+                          'Post Article',
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        )),
+                      ),
+                    )
+            ],
+          ),
         ),
       ),
     );
