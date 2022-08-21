@@ -44,13 +44,13 @@ class ArticlesView extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      article['time'],
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 16,
-                          fontStyle: FontStyle.italic),
-                    ),
+                    // Text(
+                    //   article['time'],
+                    //   style: TextStyle(
+                    //       color: Colors.grey,
+                    //       fontSize: 16,
+                    //       fontStyle: FontStyle.italic),
+                    // ),
                     Text(
                       article['date'],
                       textAlign: TextAlign.center,
@@ -72,16 +72,16 @@ class ArticlesView extends StatelessWidget {
                       fontWeight: FontWeight.w600),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(14.0, 7, 14.0, 7),
-                child: Text(
-                  article['description'],
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 17,
-                      fontWeight: FontWeight.w200),
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.fromLTRB(14.0, 7, 14.0, 7),
+              //   child: Text(
+              //     article['description'],
+              //     style: TextStyle(
+              //         color: Colors.black,
+              //         fontSize: 17,
+              //         fontWeight: FontWeight.w200),
+              //   ),
+              // ),
               SizedBox(height: 5),
               Padding(
                 padding: const EdgeInsets.fromLTRB(14.0, 20, 14.0, 7),
@@ -106,13 +106,13 @@ class ArticlesView extends StatelessWidget {
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600),
                           ),
-                          Text(
-                            article['date'],
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 15,
-                            ),
-                          ),
+                          // Text(
+                          //   article['date'],
+                          //   style: TextStyle(
+                          //     color: Colors.grey,
+                          //     fontSize: 15,
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),
