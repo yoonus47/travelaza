@@ -10,8 +10,7 @@ import 'package:travelaza/credentials.dart';
 
 class NewTripLocationView extends StatefulWidget {
   final Trip trip;
-  NewTripLocationView({Key? key, @required required this.trip})
-      : super(key: key);
+  NewTripLocationView({Key? key, required this.trip}) : super(key: key);
 
   @override
   State<NewTripLocationView> createState() => _NewTripLocationViewState();

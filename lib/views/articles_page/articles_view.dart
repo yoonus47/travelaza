@@ -6,6 +6,7 @@ import 'package:travelaza/views/indev.dart';
 
 import 'package:travelaza/views/articles_page/add_articles_view.dart';
 import 'package:travelaza/widgets/loading_cube.dart';
+import 'package:travelaza/views/articles_page/article_detail_view.dart';
 
 class ArticlesView extends StatelessWidget {
   Widget _cardUI(BuildContext context, DocumentSnapshot article) {
@@ -20,7 +21,14 @@ class ArticlesView extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => InDev()),
+            MaterialPageRoute(
+                builder: (context) => ArticleDetailView(
+                    article: Article(
+                        article['imageUrl'],
+                        article['title'],
+                        article['description'],
+                        article['date'],
+                        article['time']))),
           );
         },
         child: Container(
