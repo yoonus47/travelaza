@@ -92,19 +92,19 @@ class ArticleDetailView extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        'KK Rogan',
+                        'KK Rajan    ',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 15,
                             fontWeight: FontWeight.w600),
                       ),
-                      // Text(
-                      //   article['date'],
-                      //   style: TextStyle(
-                      //     color: Colors.grey,
-                      //     fontSize: 15,
-                      //   ),
-                      // ),
+                      Text(
+                        '@kkrajan47',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
                     ],
                   ),
                 ),

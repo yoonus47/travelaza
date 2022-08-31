@@ -21,17 +21,35 @@ class DiscoverView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Sup Yoonus!',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 2, 59, 89),
+                      fontSize: 40,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 18, 0, 0),
-              child: Text(
-                'Welcome Yoonus!',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 2, 59, 89),
-                  fontSize: 35,
-                  fontWeight: FontWeight.w500,
+              padding: const EdgeInsets.all(8.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  'images/weather-c.gif',
+                  width: double.infinity,
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),

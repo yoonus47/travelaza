@@ -95,34 +95,44 @@ class ArticlesView extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(14.0, 20, 14.0, 7),
                 child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                      child: CircleAvatar(
-                        radius: 19,
-                        backgroundImage: NetworkImage(
-                            'https://cdn.pixabay.com/photo/2015/03/03/20/42/man-657869_1280.jpg'), //image url
-                      ),
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 19,
+                          backgroundImage: NetworkImage(
+                              'https://cdn.pixabay.com/photo/2015/03/03/20/42/man-657869_1280.jpg'), //image url
+                        ),
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
-                      child: Column(
-                        children: [
-                          Text(
-                            'KK Rogan',
-                            style: TextStyle(
-                                color: Colors.black,
+                    SizedBox(width: 10),
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'KK Rajan    ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              '@kkrajan47',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                color: Colors.grey,
                                 fontSize: 15,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          // Text(
-                          //   article['date'],
-                          //   style: TextStyle(
-                          //     color: Colors.grey,
-                          //     fontSize: 15,
-                          //   ),
-                          // ),
-                        ],
-                      ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ],
                 ),
