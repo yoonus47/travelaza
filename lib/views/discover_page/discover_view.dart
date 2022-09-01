@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travelaza/views/indev.dart';
+import 'package:travelaza/views/discover_page/weather_view.dart';
+import 'package:travelaza/views/discover_page/convert_m_view.dart';
+import 'package:travelaza/views/discover_page/translate_view.dart';
 
 class DiscoverView extends StatelessWidget {
   @override
@@ -53,7 +55,45 @@ class DiscoverView extends StatelessWidget {
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => InDev()));
+                      MaterialPageRoute(builder: (context) => WeatherView()));
+                },
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Card(
+              color: Color.fromARGB(255, 72, 38, 115),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: InkWell(
+                child: Container(
+                  height: 85,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(17, 19, 17, 15),
+                    child: Row(
+                      children: [
+                        Icon(Icons.language_rounded,
+                            size: 39, color: Color(0xFFF9DF90)),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Translate',
+                          style: TextStyle(
+                              fontSize: 33,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFFF9DF90)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => TranslateView()));
                 },
               ),
             ),
@@ -71,21 +111,30 @@ class DiscoverView extends StatelessWidget {
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(17, 19, 17, 15),
-                    child: Text(
-                      'Convert Currencies',
-                      style: TextStyle(
-                          fontSize: 33,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFFF9DF90)),
+                    child: Row(
+                      children: [
+                        Icon(Icons.currency_exchange_rounded,
+                            size: 39, color: Color(0xFFF9DF90)),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Convert Money',
+                          style: TextStyle(
+                              fontSize: 33,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFFF9DF90)),
+                        ),
+                      ],
                     ),
                   ),
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => InDev()));
+                      MaterialPageRoute(builder: (context) => ConvertMoney()));
                 },
               ),
-            )
+            ),
           ],
         ),
       ),
