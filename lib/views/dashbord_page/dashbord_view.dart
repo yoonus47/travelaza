@@ -104,7 +104,7 @@ class DashbordView extends StatelessWidget {
               image: DecorationImage(
                 colorFilter: new ColorFilter.mode(
                     Colors.black.withOpacity(0.6), BlendMode.dstATop),
-                image: AssetImage("images/dubai.webp"),
+                image: AssetImage("images/beach.jpeg"),
                 fit: BoxFit.fill,
                 alignment: Alignment.topCenter,
               ),
