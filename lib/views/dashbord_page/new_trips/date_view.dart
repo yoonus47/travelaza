@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:provider/single_child_widget.dart';
 import 'package:travelaza/credentials.dart';
 import 'package:travelaza/models/Trip.dart';
 import 'package:intl/intl.dart';
@@ -49,13 +50,13 @@ class _NewTripDateViewState extends State<NewTripDateView> {
             slivers: [
               SliverAppBar(
                 automaticallyImplyLeading: false,
-                expandedHeight: 300,
+                expandedHeight: 280,
                 flexibleSpace: FlexibleSpaceBar(
                   background: widget.trip.getLocationImage(),
                 ),
               ),
               SliverFixedExtentList(
-                itemExtent: 150.00,
+                itemExtent: 210.00,
                 delegate: SliverChildListDelegate([
                   buildSelectedDetails(context, widget.trip),
                   buildButtons(),
@@ -109,14 +110,20 @@ class _NewTripDateViewState extends State<NewTripDateView> {
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.60,
           child: ElevatedButton(
-            child: Text("Choose Dates"),
+            child: Text(
+              "Choose Dates",
+              style: TextStyle(fontSize: 18),
+            ),
             onPressed: _show,
           ),
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.60,
           child: ElevatedButton(
-            child: Text('Continue'),
+            child: Text(
+              'Continue',
+              style: TextStyle(fontSize: 18),
+            ),
             onPressed: () {
               widget.trip.startDate = _startDate;
               widget.trip.endDate = _endDate;
@@ -200,7 +207,7 @@ class _NewTripDateViewState extends State<NewTripDateView> {
             left: 8.0,
             right: 8.0,
           ),
-          child: SingleChildScrollView(
+          child: Container(
             child: Card(
               child: Row(
                 children: <Widget>[

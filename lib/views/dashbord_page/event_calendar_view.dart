@@ -25,6 +25,7 @@ late TimeOfDay _endTime;
 bool _isAllDay = false;
 String _subject = '';
 String _notes = '';
+var _placeExp = 0;
 
 class EventCalendarState extends State<EventCalendar> {
   EventCalendarState();
@@ -41,11 +42,14 @@ class EventCalendarState extends State<EventCalendar> {
     _selectedAppointment = null;
     _subject = '';
     _notes = '';
+    _placeExp = 0;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    var dailyMax = widget.trip.budget;
+    var dailyExp = 0;
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 245, 245, 247),
         appBar: AppBar(
@@ -72,7 +76,7 @@ class EventCalendarState extends State<EventCalendar> {
                     style: GoogleFonts.lato(fontSize: 20),
                   ),
                   Text(
-                    '${widget.trip.budget} INR',
+                    '${_placeExp} INR',
                     style: GoogleFonts.lato(
                         fontSize: 21, fontWeight: FontWeight.w800),
                   ),
@@ -118,6 +122,7 @@ class EventCalendarState extends State<EventCalendar> {
       _isAllDay = false;
       _subject = '';
       _notes = '';
+      _placeExp = 0;
       if (_calendarView == CalendarView.month) {
         _calendarView = CalendarView.day;
       } else {
@@ -131,6 +136,7 @@ class EventCalendarState extends State<EventCalendar> {
               ? ''
               : meetingDetails.eventName;
           _notes = meetingDetails.description;
+          _placeExp = int.parse(_notes);
           _selectedAppointment = meetingDetails;
         } else {
           final DateTime date = calendarTapDetails.date!;
@@ -152,7 +158,6 @@ class EventCalendarState extends State<EventCalendar> {
   List<Meeting> getMeetingDetails() {
     final List<Meeting> meetingCollection = <Meeting>[];
     eventNameCollection = <String>[];
-
     return meetingCollection;
   }
 }

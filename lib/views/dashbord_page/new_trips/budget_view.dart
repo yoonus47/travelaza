@@ -69,10 +69,10 @@ class _NewTripBudgetViewState extends State<NewTripBudgetView> {
       _switchButtonText = "Build Budget";
       fields.add(Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Text("Enter a Trip Budget"),
+        child: Text("Enter the Trip Budget"),
       ));
       fields
-          .add(generateTextField(_budgetController, "Daily estimated budget"));
+          .add(generateTextField(_budgetController, "Total estimated budget"));
     } else {
       // assumes complex budget
       _switchButtonText = "Simple Budget";
@@ -81,13 +81,13 @@ class _NewTripBudgetViewState extends State<NewTripBudgetView> {
         child: Text("Enter How much you want to spend in each area"),
       ));
       fields.add(generateTextField(
-          _transportationController, "Daily Estimated Transportation Budget"));
+          _transportationController, "Total Estimated Transportation Budget"));
       fields.add(
-          generateTextField(_foodController, "Daily Estimated Food Budget"));
+          generateTextField(_foodController, "Total Estimated Food Budget"));
       fields.add(generateTextField(
-          _lodgingController, "Daily Estimated Accomodation Budget"));
+          _lodgingController, "Total Estimated Accomodation Budget"));
       fields.add(generateTextField(
-          _entertainmentController, "Daily Estimated Entertainment Budget"));
+          _entertainmentController, "Total Estimated Entertainment Budget"));
       fields.add(Text("Total: ₹ $_budgetTotal"));
     }
 

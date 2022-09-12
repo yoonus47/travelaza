@@ -137,7 +137,7 @@ class TripDetailView extends StatelessWidget {
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(10, 8.5, 0, 0),
                             child: AutoSizeText(
-                              "INR ${(tripDays * trip.budget).toString()}",
+                              "INR ${(trip.budget).toString()}",
                               maxLines: 3,
                               style: TextStyle(
                                   color: Color.fromARGB(255, 185, 51, 105),
