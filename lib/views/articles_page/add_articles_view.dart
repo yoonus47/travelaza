@@ -141,7 +141,7 @@ class _AddArticlesViewState extends State<AddArticlesView> {
                             child: Text(
                               'Choose Image',
                               style:
-                                  TextStyle(fontSize: 16, color: Colors.white),
+                                  TextStyle(fontSize: 23, color: Colors.white),
                             )),
                       ))
                   : GestureDetector(
@@ -156,20 +156,36 @@ class _AddArticlesViewState extends State<AddArticlesView> {
                             : const Text('Please select an image'),
                       ),
                     ),
-              SizedBox(height: 16),
+              SizedBox(height: 20),
               TextField(
                 controller: _titleEditingControlller,
                 keyboardType: TextInputType.text,
                 decoration: (InputDecoration(labelText: 'Title')),
+                style: TextStyle(
+                  fontSize: 23,
+                ),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 30),
               TextField(
+                style: TextStyle(
+                  fontSize: 23,
+                ),
                 controller: _descriptionEditingControlller,
                 keyboardType: TextInputType.text,
-                decoration: (InputDecoration(labelText: 'Description')),
-                maxLines: null,
+                maxLines: 5,
+                decoration: const InputDecoration(
+                    hintStyle: TextStyle(
+                      fontSize: 23,
+                    ),
+                    hintText: "Enter something",
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.all(Radius.circular(15)))),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 25),
               _loading
                   ? loadingScreen()
                   : GestureDetector(
@@ -181,7 +197,10 @@ class _AddArticlesViewState extends State<AddArticlesView> {
                         child: Center(
                             child: Text(
                           'Post Article',
-                          style: TextStyle(fontSize: 18, color: Colors.white),
+                          style: TextStyle(
+                              fontSize: 23,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500),
                         )),
                       ),
                     )
