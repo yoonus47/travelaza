@@ -224,7 +224,7 @@ class AppointmentEditorState extends State<AppointmentEditor> {
             ListTile(
               contentPadding: const EdgeInsets.all(5),
               leading: Icon(
-                Icons.subject,
+                Icons.currency_rupee_rounded,
                 color: Colors.black87,
               ),
               title: TextField(
@@ -232,7 +232,7 @@ class AppointmentEditorState extends State<AppointmentEditor> {
                 onChanged: (String value) {
                   _notes = value;
                 },
-                keyboardType: TextInputType.multiline,
+                keyboardType: TextInputType.numberWithOptions(),
                 maxLines: null,
                 style: TextStyle(
                     fontSize: 18,
@@ -240,7 +240,7 @@ class AppointmentEditorState extends State<AppointmentEditor> {
                     fontWeight: FontWeight.w400),
                 decoration: InputDecoration(
                   border: InputBorder.none,
-                  hintText: 'Add Description',
+                  hintText: 'Add Budget',
                 ),
               ),
             ),
@@ -248,33 +248,33 @@ class AppointmentEditorState extends State<AppointmentEditor> {
               height: 1.0,
               thickness: 1,
             ),
-            ListTile(
-              contentPadding: const EdgeInsets.all(5),
-              leading: Icon(
-                Icons.currency_rupee_rounded,
-                color: Colors.black87,
-              ),
-              title: TextField(
-                // controller: TextEditingController(text: _notes),
-                // onChanged: (String value) {
-                //   _notes = value;
-                // },
-                keyboardType: TextInputType.numberWithOptions(decimal: false),
-                maxLines: null,
-                style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black87,
-                    fontWeight: FontWeight.w400),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: 'Estimated Budget',
-                ),
-              ),
-            ),
-            const Divider(
-              height: 1.0,
-              thickness: 1,
-            ),
+            // ListTile(
+            //   contentPadding: const EdgeInsets.all(5),
+            //   leading: Icon(
+            //     Icons.currency_rupee_rounded,
+            //     color: Colors.black87,
+            //   ),
+            //   title: TextField(
+            // controller: TextEditingController(text: _notes),
+            // onChanged: (String value) {
+            //   _notes = value;
+            // },
+            //         keyboardType: TextInputType.numberWithOptions(decimal: false),
+            //         maxLines: null,
+            //         style: TextStyle(
+            //             fontSize: 18,
+            //             color: Colors.black87,
+            //             fontWeight: FontWeight.w400),
+            //         decoration: InputDecoration(
+            //           border: InputBorder.none,
+            //           hintText: 'Estimated Budget',
+            //         ),
+            //       ),
+            //     ),
+            //     const Divider(
+            //       height: 1.0,
+            //       thickness: 1,
+            //     ),
           ],
         ));
   }
@@ -348,9 +348,12 @@ class AppointmentEditorState extends State<AppointmentEditor> {
                         Navigator.pop(context);
                       }
                     },
-                    child:
-                        const Icon(Icons.delete_outline, color: Colors.white),
-                    backgroundColor: Colors.red,
+                    child: const Icon(
+                      Icons.delete_rounded,
+                      color: Colors.white,
+                      size: 25,
+                    ),
+                    backgroundColor: Color.fromARGB(255, 151, 12, 2),
                   )));
   }
 

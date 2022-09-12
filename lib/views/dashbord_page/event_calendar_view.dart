@@ -3,7 +3,6 @@ library event_calendar;
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
-import 'package:travelaza/home_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:travelaza/models/Trip.dart';
