@@ -48,8 +48,7 @@ class EventCalendarState extends State<EventCalendar> {
 
   @override
   Widget build(BuildContext context) {
-    var dailyMax = widget.trip.budget;
-    var dailyExp = 0;
+    var totalBudget = widget.trip.budget;
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 245, 245, 247),
         appBar: AppBar(
@@ -72,11 +71,11 @@ class EventCalendarState extends State<EventCalendar> {
               child: Row(
                 children: [
                   Text(
-                    'Day Remaining Budget  ',
+                    'Trip Remaining Budget  ',
                     style: GoogleFonts.lato(fontSize: 20),
                   ),
                   Text(
-                    '${_placeExp} INR',
+                    '${totalBudget - _placeExp} INR',
                     style: GoogleFonts.lato(
                         fontSize: 21, fontWeight: FontWeight.w800),
                   ),
