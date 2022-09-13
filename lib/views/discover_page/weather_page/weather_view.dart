@@ -28,14 +28,14 @@ class WeatherView extends StatelessWidget {
 
     Widget searchCity() {
       return Container(
-        margin: EdgeInsets.fromLTRB(30, 20, 30, 0),
+        margin: EdgeInsets.fromLTRB(30, 5, 30, 0),
         width: double.infinity,
         child: Row(
           children: [
             Icon(
               Icons.search_outlined,
               color: Color(0xFF1A395A),
-              size: 30,
+              size: 35,
             ),
             SizedBox(width: 5),
             Expanded(
@@ -48,7 +48,7 @@ class WeatherView extends StatelessWidget {
                 style: TextStyle(color: Color(0xFF1A395A), fontSize: 24),
                 decoration: InputDecoration(
                   hintText: 'Search City',
-                  hintStyle: TextStyle(color: Color(0xFF1A395A), fontSize: 24),
+                  hintStyle: TextStyle(color: Colors.grey, fontSize: 24),
                   border: InputBorder.none,
                 ),
               ),
@@ -61,7 +61,7 @@ class WeatherView extends StatelessWidget {
     Widget weatherIcon() {
       return Center(
         child: Container(
-          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+          margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
           height: height * 0.2,
           child: SimpleShadow(
             opacity: 0.20,
@@ -88,7 +88,7 @@ class WeatherView extends StatelessWidget {
 
     Widget weatherInformation() {
       return Container(
-        margin: EdgeInsets.fromLTRB(30, 20, 30, 0),
+        margin: EdgeInsets.fromLTRB(30, 10, 30, 0),
         padding: EdgeInsets.fromLTRB(0, 17, 0, 17),
         width: double.infinity,
         decoration: BoxDecoration(
@@ -123,7 +123,7 @@ class WeatherView extends StatelessWidget {
                     margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
                     child: SimpleShadow(
                       opacity: 0.25,
-                      color: Colors.black,
+                      color: Color.fromARGB(255, 72, 64, 64),
                       offset: Offset(3, 7),
                       sigma: 25,
                       child: Text(
