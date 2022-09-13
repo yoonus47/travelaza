@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travelaza/views/discover_page/weather_view.dart';
+import 'package:travelaza/views/discover_page/weather_page/weather_view.dart';
 import 'package:travelaza/views/discover_page/convert_m_view.dart';
 import 'package:travelaza/views/discover_page/translate_view.dart';
 
