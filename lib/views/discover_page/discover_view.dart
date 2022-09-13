@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/views/discover_page/weather_page/weather_view.dart';
-import 'package:travelaza/views/discover_page/convert_m_view.dart';
-import 'package:travelaza/views/discover_page/translate_view.dart';
+import 'package:travelaza/views/discover_page/convert_money_page/convert_m_view.dart';
+import 'package:travelaza/views/discover_page/translate_page/translate_view.dart';
 
 class DiscoverView extends StatelessWidget {
   @override
