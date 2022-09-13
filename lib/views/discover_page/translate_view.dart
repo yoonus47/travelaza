@@ -79,7 +79,7 @@ class _TranslateViews extends State<TranslateView> {
                     child: Text(
                       'From  ',
                       style: TextStyle(
-                        color: Colors.black87,
+                        color: Color(0xFF1A395A),
                         fontSize: 25,
                         fontWeight: FontWeight.w500,
                       ),
@@ -125,7 +125,7 @@ class _TranslateViews extends State<TranslateView> {
                     child: Text(
                       'To  ',
                       style: TextStyle(
-                        color: Colors.black87,
+                        color: Color(0xFF1A395A),
                         fontSize: 25,
                         fontWeight: FontWeight.w500,
                       ),

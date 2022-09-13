@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travelaza/views/discover_page/weather_page/weather_view.dart';
 import 'package:travelaza/views/discover_page/convert_m_view.dart';
 import 'package:travelaza/views/discover_page/translate_view.dart';
@@ -33,13 +34,37 @@ class DiscoverView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    'images/weather-c.gif',
-                    width: double.infinity,
+                child: Stack(children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'images/weather_dark.jpeg',
+                      width: double.infinity,
+                    ),
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(17, 19, 17, 15),
+                    child: Row(
+                      children: [
+                        Icon(Icons.thunderstorm_rounded,
+                            size: 60, color: Color(0xFFF9DF90)),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: AutoSizeText(
+                            'Check On the Weather',
+                            style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xFFF9DF90)),
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ]),
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => WeatherView()));
