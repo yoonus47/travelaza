@@ -58,7 +58,6 @@ class _TranslateViews extends State<TranslateView> {
       backgroundColor: Color.fromARGB(255, 246, 235, 244),
       appBar: AppBar(
         title: const Text("Translate"),
-        backgroundColor: Color.fromARGB(255, 72, 38, 115),
       ),
       /* appBar: AppBar(
         title: Text('Back'),
@@ -76,11 +75,11 @@ class _TranslateViews extends State<TranslateView> {
             Row(
               children: [
                 const Expanded(
-                    flex: 2,
+                    flex: 3,
                     child: Text(
-                      'From:  ',
+                      'From  ',
                       style: TextStyle(
-                        color: Colors.black54,
+                        color: Colors.black87,
                         fontSize: 25,
                         fontWeight: FontWeight.w500,
                       ),
@@ -97,13 +96,9 @@ class _TranslateViews extends State<TranslateView> {
                     iconSize: 24,
                     elevation: 16,
                     style: const TextStyle(
-                      color: Colors.black87,
+                      color: Colors.black54,
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
-                    ),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.grey,
                     ),
                     onChanged: (String? newValue) {
                       setState(() {
@@ -126,11 +121,11 @@ class _TranslateViews extends State<TranslateView> {
             Row(
               children: [
                 const Expanded(
-                    flex: 2,
+                    flex: 3,
                     child: Text(
-                      'To:  ',
+                      'To  ',
                       style: TextStyle(
-                        color: Colors.black54,
+                        color: Colors.black87,
                         fontSize: 25,
                         fontWeight: FontWeight.w500,
                       ),
@@ -147,13 +142,9 @@ class _TranslateViews extends State<TranslateView> {
                     iconSize: 24,
                     elevation: 16,
                     style: const TextStyle(
-                      color: Colors.black87,
+                      color: Colors.black54,
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
-                    ),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.grey,
                     ),
                     onChanged: (String? newValue) {
                       setState(() {
@@ -171,7 +162,7 @@ class _TranslateViews extends State<TranslateView> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 40),
             // TextFeild
             TextField(
               style: TextStyle(
@@ -188,7 +179,7 @@ class _TranslateViews extends State<TranslateView> {
                   hintStyle: TextStyle(
                     fontSize: 25,
                   ),
-                  hintText: "Enter something",
+                  hintText: "Enter something..",
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(15))),
@@ -197,15 +188,14 @@ class _TranslateViews extends State<TranslateView> {
                       borderRadius: BorderRadius.all(Radius.circular(15)))),
             ),
             const SizedBox(
-              height: 20,
+              height: 40,
             ),
             MaterialButton(
                 height: 50,
-                color: Color.fromARGB(255, 72, 38, 115),
+                color: Color(0xFF1A395A),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
-                    side: const BorderSide(
-                        color: Color.fromARGB(255, 72, 38, 115))),
+                    side: const BorderSide(color: Color(0xFF1A395A))),
                 child: const Text('Translate',
                     style: TextStyle(color: Colors.white, fontSize: 20)),
                 onPressed: () {
