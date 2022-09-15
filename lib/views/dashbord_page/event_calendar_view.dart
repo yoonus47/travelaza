@@ -25,7 +25,7 @@ late TimeOfDay _endTime;
 bool _isAllDay = false;
 String _subject = '';
 String _notes = '';
-var _placeExp = 0;
+var totalExp = 0;
 
 class EventCalendarState extends State<EventCalendar> {
   EventCalendarState();
@@ -42,7 +42,6 @@ class EventCalendarState extends State<EventCalendar> {
     _selectedAppointment = null;
     _subject = '';
     _notes = '';
-    _placeExp = 0;
     super.initState();
   }
 
@@ -75,7 +74,7 @@ class EventCalendarState extends State<EventCalendar> {
                     style: GoogleFonts.lato(fontSize: 20),
                   ),
                   Text(
-                    '${totalBudget - _placeExp} INR',
+                    '${totalBudget - totalExp} INR',
                     style: GoogleFonts.lato(
                         fontSize: 21, fontWeight: FontWeight.w800),
                   ),
@@ -121,7 +120,6 @@ class EventCalendarState extends State<EventCalendar> {
       _isAllDay = false;
       _subject = '';
       _notes = '';
-      _placeExp = 0;
       if (_calendarView == CalendarView.month) {
         _calendarView = CalendarView.day;
       } else {
@@ -135,7 +133,7 @@ class EventCalendarState extends State<EventCalendar> {
               ? ''
               : meetingDetails.eventName;
           _notes = meetingDetails.description;
-          _placeExp = int.parse(_notes);
+          totalExp += int.parse(_notes);
           _selectedAppointment = meetingDetails;
         } else {
           final DateTime date = calendarTapDetails.date!;
