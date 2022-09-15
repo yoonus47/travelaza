@@ -93,17 +93,23 @@ class DiscoverView extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(17, 19, 17, 15),
                     child: Row(
                       children: [
-                        Icon(Icons.language_rounded,
-                            size: 40, color: Color(0xFFF9DF90)),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20.0),
+                          child: Icon(Icons.language_rounded,
+                              size: 60, color: Color(0xFFF9DF90)),
+                        ),
                         SizedBox(
                           width: 10,
                         ),
-                        Text(
-                          'Translate',
-                          style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFFF9DF90)),
+                        Expanded(
+                          child: AutoSizeText(
+                            'Translate',
+                            maxLines: 2,
+                            style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xFFF9DF90)),
+                          ),
                         ),
                       ],
                     ),
@@ -138,16 +144,19 @@ class DiscoverView extends StatelessWidget {
                     child: Row(
                       children: [
                         Icon(Icons.currency_exchange_rounded,
-                            size: 40, color: Color(0xFFF9DF90)),
+                            size: 50, color: Color(0xFFF9DF90)),
                         SizedBox(
                           width: 10,
                         ),
-                        Text(
-                          'Convert Money',
-                          style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFFF9DF90)),
+                        Expanded(
+                          child: AutoSizeText(
+                            'Convert your Currency',
+                            maxLines: 2,
+                            style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xFFF9DF90)),
+                          ),
                         ),
                       ],
                     ),
